@@ -1,0 +1,2841 @@
+
+[
+    {
+        "Kana" : "アイスクリーム",
+        "Kanji" : "アイスクリーム",
+        "Phonetic" : "アイスクリーム",
+        "Chinese" : "冰淇淋"
+    },
+    {
+        "Kana" : "あいだ",
+        "Kanji" : "間",
+        "Phonetic" : "{{間,あいだ}}",
+        "Chinese" : "之間，中"
+    },
+    {
+        "Kana" : "あいます",
+        "Kanji" : "会います",
+        "Phonetic" : "{{会,あ}}います",
+        "Chinese" : "見面"
+    },
+    {
+        "Kana" : "あお",
+        "Kanji" : "青",
+        "Phonetic" : "{{青,あお}}",
+        "Chinese" : "藍色"
+    },
+    {
+        "Kana" : "あおい",
+        "Kanji" : "青い",
+        "Phonetic" : "{{青,あお}}い",
+        "Chinese" : "藍的"
+    },
+    {
+        "Kana" : "あか",
+        "Kanji" : "赤",
+        "Phonetic" : "{{赤,あか}}",
+        "Chinese" : "紅色"
+    },
+    {
+        "Kana" : "あかい",
+        "Kanji" : "赤い",
+        "Phonetic" : "{{赤,あか}}い",
+        "Chinese" : "紅的"
+    },
+    {
+        "Kana" : "（せいかくが）あかるい",
+        "Kanji" : "（性格が）明るい",
+        "Phonetic" : "（{{性格,せいかく}}が）{{明,あか}}るい",
+        "Chinese" : "（性格）開朗"
+    },
+    {
+        "Kana" : "あけます",
+        "Kanji" : "開けます",
+        "Phonetic" : "{{開,あ}}けます",
+        "Chinese" : "打開，開"
+    },
+    {
+        "Kana" : "あげます",
+        "Kanji" : "あげます",
+        "Phonetic" : "あげます",
+        "Chinese" : "給予"
+    },
+    {
+        "Kana" : "あさ",
+        "Kanji" : "朝",
+        "Phonetic" : "{{朝,あさ}}",
+        "Chinese" : "早上"
+    },
+    {
+        "Kana" : "あさって",
+        "Kanji" : "あさって",
+        "Phonetic" : "あさって",
+        "Chinese" : "後天"
+    },
+    {
+        "Kana" : "あし",
+        "Kanji" : "足",
+        "Phonetic" : "{{足,あし}}",
+        "Chinese" : "腳，腿"
+    },
+    {
+        "Kana" : "あした",
+        "Kanji" : "明日",
+        "Phonetic" : "{{明日,あした}}",
+        "Chinese" : "明天"
+    },
+    {
+        "Kana": "あそこ",
+        "Kanji": "あそこ",
+        "Phonetic": "あそこ",
+        "Chinese": "那兒，那裡"
+    },
+    {
+        "Kana": "あそびます",
+        "Kanji": "遊びます",
+        "Phonetic": "{{遊,あそ}}びます",
+        "Chinese": "玩"
+    },
+    {
+        "Kana": "あたたかい",
+        "Kanji": "暖かい",
+        "Phonetic": "{{暖,あたた}}かい",
+        "Chinese": "溫暖，暖和"
+    },
+    {
+        "Kana": "あたらしい",
+        "Kanji": "新しい",
+        "Phonetic": "{{新,あたら}}しい",
+        "Chinese": "新的"
+    },
+    {
+        "Kana": "あちら",
+        "Kanji": "あちら",
+        "Phonetic": "あちら",
+        "Chinese": "那邊"
+    },
+    {
+        "Kana": "あつい",
+        "Kanji": "暑い",
+        "Phonetic": "{{暑,あつ}}い",
+        "Chinese": "熱"
+    },
+    {
+        "Kana": "あっち",
+        "Kanji": "あっち",
+        "Phonetic": "あっち",
+        "Chinese": "那邊（「あちら」的非正式口語說法）"
+    },
+    {
+        "Kana": "あと～",
+        "Kanji": "後～",
+        "Phonetic": "{{後,あと}}～",
+        "Chinese": "～以後，再過（例：再過10分鐘）"
+    },
+    {
+        "Kana": "あに",
+        "Kanji": "兄",
+        "Phonetic": "{{兄,あに}}",
+        "Chinese": "家兄，我的哥哥（提及自己的哥哥時用）"
+    },
+    {
+        "Kana": "あね",
+        "Kanji": "姉",
+        "Phonetic": "{{姉,あね}}",
+        "Chinese": "家姊，我的姊姊（提及自己的姊姊時用）"
+    },
+    {
+        "Kana": "あの",
+        "Kanji": "あの",
+        "Phonetic": "あの",
+        "Chinese": "那，那個"
+    },
+    {
+        "Kana": "あびます",
+        "Kanji": "浴びます",
+        "Phonetic": "{{浴,あ}}びます",
+        "Chinese": "沖（澡），淋浴"
+    },
+    {
+        "Kana": "あぶない",
+        "Kanji": "危ない",
+        "Phonetic": "{{危,あぶ}}ない",
+        "Chinese": "危險"
+    },
+    {
+        "Kana": "あまり～ない",
+        "Kanji": "あまり～ない",
+        "Phonetic": "あまり～ない",
+        "Chinese": "不太"
+    },
+    {
+        "Kana": "あめ",
+        "Kanji": "雨",
+        "Phonetic": "{{雨,あめ}}",
+        "Chinese": "雨"
+    },
+    {
+        "Kana": "アメリカじん",
+        "Kanji": "アメリカ人",
+        "Phonetic": "アメリカ{{人,じん}}",
+        "Chinese": "美國人"
+    },
+    {
+        "Kana": "あらいます",
+        "Kanji": "洗います",
+        "Phonetic": "{{洗,あら}}います",
+        "Chinese": "洗"
+    },
+    {
+        "Kana": "あります",
+        "Kanji": "あります",
+        "Phonetic": "あります",
+        "Chinese": "有，在"
+    },
+    {
+        "Kana": "あるいてきます",
+        "Kanji": "歩いてきます",
+        "Phonetic": "{{歩,ある}}いてきます",
+        "Chinese": "步行來，走路來"
+    },
+    {
+        "Kana": "あるきます",
+        "Kanji": "歩きます",
+        "Phonetic": "{{歩,ある}}きます",
+        "Chinese": "走，走路，步行"
+    },
+    {
+        "Kana": "アルバイト",
+        "Kanji": "アルバイト",
+        "Phonetic": "アルバイト",
+        "Chinese": "打工，兼職"
+    },
+    {
+        "Kana": "あれ",
+        "Kanji": "あれ",
+        "Phonetic": "あれ",
+        "Chinese": "那，那個"
+    },
+    {
+        "Kana": "いい",
+        "Kanji": "いい",
+        "Phonetic": "いい",
+        "Chinese": "好"
+    },
+    {
+        "Kana": "いいえ",
+        "Kanji": "いいえ",
+        "Phonetic": "いいえ",
+        "Chinese": "不"
+    },
+    {
+        "Kana": "いいます",
+        "Kanji": "言います",
+        "Phonetic": "{{言,い}}います",
+        "Chinese": "說；叫做"
+    },
+    {
+        "Kana": "いえ",
+        "Kanji": "家",
+        "Phonetic": "{{家,いえ}}",
+        "Chinese": "家；房子"
+    },
+    {
+        "Kana": "いかが",
+        "Kanji": "如何",
+        "Phonetic": "{{如何,いかが}}",
+        "Chinese": "如何，怎麼樣：「どう」的禮貌表達"
+    },
+    {
+        "Kana": "いきます",
+        "Kanji": "行きます",
+        "Phonetic": "{{行,い}}きます",
+        "Chinese": "去"
+    },
+    {
+        "Kana": "いくつ",
+        "Kanji": "幾つ",
+        "Phonetic": "{{幾,いく}}つ",
+        "Chinese": ["① 幾歲，多大", "②（數量）多少個"]
+    },
+    {
+        "Kana": "いくら",
+        "Kanji": "幾ら",
+        "Phonetic": "{{幾,いく}}ら",
+        "Chinese": "多少錢"
+    },
+    {
+        "Kana": "いしゃ",
+        "Kanji": "医者",
+        "Phonetic": "{{医者,いしゃ}}",
+        "Chinese": "醫生"
+    },
+    {
+        "Kana": "いす",
+        "Kanji": "椅子",
+        "Phonetic": "{{椅子,いす}}",
+        "Chinese": "椅子"
+    },
+    {
+        "Kana": "いそがしい",
+        "Kanji": "忙しい",
+        "Phonetic": "{{忙,いそが}}しい",
+        "Chinese": "忙，急"
+    },
+    {
+        "Kana": "いそぎます",
+        "Kanji": "急ぎます",
+        "Phonetic": "{{急,いそ}}ぎます",
+        "Chinese": "著急，急；趕緊"
+    },
+    {
+        "Kana": "いたい",
+        "Kanji": "痛い",
+        "Phonetic": "{{痛,いた}}い",
+        "Chinese": "疼，疼痛"
+    },
+    {
+        "Kana": "イタリア",
+        "Kanji": "イタリア",
+        "Phonetic": "イタリア",
+        "Chinese": "義大利"
+    },
+    {
+        "Kana": "いちばん",
+        "Kanji": "一番",
+        "Phonetic": "{{一番,いちばん}}",
+        "Chinese": "最；最好，最佳"
+    },
+    {
+        "Kana": "いつ",
+        "Kanji": "何時",
+        "Phonetic": "{{何時,いつ}}",
+        "Chinese": "什麼時候，何時"
+    },
+    {
+        "Kana": "いっしょに",
+        "Kanji": "一緒に",
+        "Phonetic": "{{一緒,いっしょ}}に",
+        "Chinese": "一起"
+    },
+    {
+        "Kana": "いつも",
+        "Kanji": "いつも",
+        "Phonetic": "いつも",
+        "Chinese": "總是"
+    },
+    {
+        "Kana": "いぬ",
+        "Kanji": "犬",
+        "Phonetic": "{{犬,いぬ}}",
+        "Chinese": "狗"
+    },
+    {
+        "Kana": "いまから",
+        "Kanji": "今から",
+        "Phonetic": "{{今,いま}}から",
+        "Chinese": "現在；現在開始"
+    },
+    {
+        "Kana": "います",
+        "Kanji": "います",
+        "Phonetic": "います",
+        "Chinese": "有，在（用於有生命、會動的人或動物）"
+    },
+    {
+        "Kana": "いもうと",
+        "Kanji": "妹",
+        "Phonetic": "{{妹,いもうと}}",
+        "Chinese": "舍妹，我妹妹：提及自己的妹妹時用"
+    },
+    {
+        "Kana": "いもうとさん",
+        "Kanji": "妹さん",
+        "Phonetic": "{{妹,いもうと}}さん",
+        "Chinese": "令妹，您的妹妹：提及别人的妹妹時用"
+    },
+    {
+        "Kana": "いりぐち",
+        "Kanji": "入り口",
+        "Phonetic": "{{入,いり}}ぐち",
+        "Chinese": "入口"
+    },
+
+
+    {
+        "Kana": "いります",
+        "Kanji": "いります",
+        "Phonetic": "いります",
+        "Chinese": "需要，必要"
+    },
+    {
+        "Kana": "いれます",
+        "Kanji": "入れます",
+        "Phonetic": "{{入,い}}れます",
+        "Chinese": "放入，加入"
+    },
+    {
+        "Kana": "いろいろ",
+        "Kanji": "いろいろ",
+        "Phonetic": "いろいろ",
+        "Chinese": "各種各樣，形形色色"
+    },
+    {
+        "Kana": "インターネット",
+        "Kanji": "インターネット",
+        "Phonetic": "インターネット",
+        "Chinese": "網際網路"
+    },
+    {
+        "Kana": "インターネット（を）します",
+        "Kanji": "インターネット（を）します",
+        "Phonetic": "インターネット（を）します",
+        "Chinese": "上網"
+    },
+    {
+        "Kana": "うえ",
+        "Kanji": "上え",
+        "Phonetic": "{{上,う}}え",
+        "Chinese": "上，上面"
+    },
+    {
+        "Kana": "うしろ",
+        "Kanji": "後ろ",
+        "Phonetic": "{{後,うし}}ろ",
+        "Chinese": "後，後面"
+    },
+    {
+        "Kana": "うた",
+        "Kanji": "歌",
+        "Phonetic": "{{歌,うた}}",
+        "Chinese": "歌"
+    },
+    {
+        "Kana": "うたいます",
+        "Kanji": "歌います",
+        "Phonetic": "{{歌,うた}}います",
+        "Chinese": "唱"
+    },
+    {
+        "Kana": "うち",
+        "Kanji": "家",
+        "Phonetic": "{{家,うち}}",
+        "Chinese": "家"
+    },
+    {
+        "Kana": "うまれます",
+        "Kanji": "生まれます",
+        "Phonetic": "{{生,う}}まれます",
+        "Chinese": "出生"
+    },
+    {
+        "Kana": "うみ",
+        "Kanji": "海",
+        "Phonetic": "{{海,うみ}}",
+        "Chinese": "海，大海，海洋"
+    },
+    {
+        "Kana": "うら",
+        "Kanji": "裏",
+        "Phonetic": "{{裏,うら}}",
+        "Chinese": "背後，背面；內部，幕後"
+    },
+    {
+        "Kana": "うります",
+        "Kanji": "売ります",
+        "Phonetic": "{{売,う}}ります",
+        "Chinese": "賣，銷售"
+    },
+    {
+        "Kana": "うるさい",
+        "Kanji": "うるさい",
+        "Phonetic": "うるさい",
+        "Chinese": "吵，吵鬧；煩人"
+    },
+    {
+        "Kana": "うれしい",
+        "Kanji": "嬉しい",
+        "Phonetic": "{{嬉,うれ}}しい",
+        "Chinese": "高興，欣喜"
+    },
+    {
+        "Kana": "うん",
+        "Kanji": "うん",
+        "Phonetic": "うん",
+        "Chinese": "是，對，好：「はい」的非正式口語說法"
+    },
+    {
+        "Kana": "え",
+        "Kanji": "絵",
+        "Phonetic": "{{絵,え}}",
+        "Chinese": "畫"
+    },
+    {
+        "Kana": "えいが",
+        "Kanji": "映画",
+        "Phonetic": "{{映画,えいが}}",
+        "Chinese": "電影"
+    },
+    {
+        "Kana": "えいがかん",
+        "Kanji": "映画館",
+        "Phonetic": "{{映画館,えいがかん}}",
+        "Chinese": "電影院"
+    },
+    {
+        "Kana": "えいご",
+        "Kanji": "英語",
+        "Phonetic": "{{英語,えいご}}",
+        "Chinese": "英語"
+    },
+    {
+        "Kana": "ええ",
+        "Kanji": "ええ",
+        "Phonetic": "ええ",
+        "Chinese": "是，對（＝はい）"
+    },
+    {
+        "Kana": "えき",
+        "Kanji": "駅",
+        "Phonetic": "{{駅,えき}}",
+        "Chinese": "車站"
+    },
+    {
+        "Kana": "えきまえ",
+        "Kanji": "駅前",
+        "Phonetic": "{{駅前,えきまえ}}",
+        "Chinese": "車站前"
+    },
+    {
+        "Kana": "えんぴつ",
+        "Kanji": "鉛筆",
+        "Phonetic": "{{鉛筆,えんぴつ}}",
+        "Chinese": "鉛筆"
+    },
+    {
+        "Kana": "おいしい",
+        "Kanji": "美味しい",
+        "Phonetic": "{{美味,おい}}しい",
+        "Chinese": "好吃；好喝"
+    },
+    {
+        "Kana": "おおい",
+        "Kanji": "多い",
+        "Phonetic": "{{多,おお}}い",
+        "Chinese": "多"
+    },
+    {
+        "Kana": "おおきい",
+        "Kanji": "大きい",
+        "Phonetic": "{{大,おお}}きい",
+        "Chinese": "大的"
+    },
+    {
+        "Kana": "おおぜい",
+        "Kanji": "大勢",
+        "Phonetic": "{{大勢,おおぜい}}",
+        "Chinese": "很多（人）"
+    },
+    {
+        "Kana": "おかあさん",
+        "Kanji": "お母さん",
+        "Phonetic": "お{{母,かあ}}さん",
+        "Chinese": "母親；提及別人的母親時用"
+    },
+    {
+        "Kana": "おかし",
+        "Kanji": "お菓子",
+        "Phonetic": "お{{菓子,かし}}",
+        "Chinese": "零食；點心"
+    },
+    {
+        "Kana": "おかね",
+        "Kanji": "お金",
+        "Phonetic": "お{{金,かね}}",
+        "Chinese": "錢"
+    },
+    {
+        "Kana": "おきます",
+        "Kanji": "起きます",
+        "Phonetic": "{{起,お}}きます",
+        "Chinese": "起床；起來"
+    },
+    {
+        "Kana": "（ものを）おきます",
+        "Kanji": "（物を）おきます",
+        "Phonetic": "（{{物,もの}}を）おきます",
+        "Chinese": "放；放置東西"
+    },
+    {
+        "Kana": "おきゃくさん",
+        "Kanji": "お客さん",
+        "Phonetic": "お{{客,きゃく}}さん",
+        "Chinese": "客人，顧客，客戶：「客（きゃく）」的禮貌表達"
+    },
+    {
+        "Kana": "おくさん",
+        "Kanji": "奥さん",
+        "Phonetic": "{{奥,おく}}さん",
+        "Chinese": "尊夫人，您的妻子：提及别人的太太時用"
+    },
+    {
+        "Kana": "おくすり",
+        "Kanji": "お薬",
+        "Phonetic": "お{{薬,くすり}}",
+        "Chinese": "藥：「薬（くすり）」的禮貌表達"
+    },
+    {
+        "Kana": "おくります",
+        "Kanji": "送ります",
+        "Phonetic": "{{送,おく}}ります",
+        "Chinese": "送；發送；寄送；送人"
+    },
+    {
+        "Kana": "おさけ",
+        "Kanji": "お酒",
+        "Phonetic": "お{{酒,さけ}}",
+        "Chinese": "酒"
+    },
+    {
+        "Kana": "おじいさん",
+        "Kanji": "お爺さん",
+        "Phonetic": "お{{爺,じい}}さん",
+        "Chinese": ["① 爺爺；外公；提及別人的爺爺或外公時用「おじいさん」", "② 老爺爺；年紀大的男性"]
+    },
+    {
+        "Kana": "おじかん",
+        "Kanji": "お時間",
+        "Phonetic": "お{{時間,じかん}}",
+        "Chinese": "時間：「時じ間かん」的禮貌表達"
+    },
+    {
+        "Kana": "おすきなもの",
+        "Kanji": "お好きなもの",
+        "Phonetic": "お{{好,す}}きなもの",
+        "Chinese": "（您）喜歡的東西「好すきなもの 」的禮貌表達"
+    },
+    {
+        "Kana": "おそい",
+        "Kanji": "遅い",
+        "Phonetic": "{{遅,おそ}}い",
+        "Chinese": "慢；晚"
+    },
+
+
+
+
+
+
+    {
+        "Kana": "おそくまで",
+        "Kanji": "おそくまで",
+        "Phonetic": "おそくまで",
+        "Chinese": "到很晚"
+    },
+    {
+        "Kana": "おちゃ",
+        "Kanji": "お茶",
+        "Phonetic": "お{{茶,ちゃ}}",
+        "Chinese": "茶"
+    },
+    {
+        "Kana": "おっと",
+        "Kanji": "夫",
+        "Phonetic": "{{夫,おっと}}",
+        "Chinese": "丈夫"
+    },
+    {
+        "Kana": "おてら",
+        "Kanji": "お寺",
+        "Phonetic": "お{{寺,てら}}",
+        "Chinese": "寺廟"
+    },
+    {
+        "Kana": "おとうさん",
+        "Kanji": "お父さん",
+        "Phonetic": "お{{父,とう}}さん",
+        "Chinese": "令尊，您的父親：提及别人的父親時用"
+    },
+    {
+        "Kana": "おとうと",
+        "Kanji": "弟",
+        "Phonetic": "{{弟,おとうと}}",
+        "Chinese": "舍弟，我的弟弟：提及自己的弟弟時用"
+    },
+    {
+        "Kana": "おとうとさん",
+        "Kanji": "弟さん",
+        "Phonetic": "{{弟,おとうと}}さん",
+        "Chinese": "令弟，您的弟弟：提及別人的弟弟時用"
+    },
+    {
+        "Kana": "おとこのこ",
+        "Kanji": "男の子",
+        "Phonetic": "{{男,おとこ}}の{{子,こ}}",
+        "Chinese": "男孩"
+    },
+    {
+        "Kana": "おとこのひと",
+        "Kanji": "男の人",
+        "Phonetic": "{{男,おとこ}}の{{人,ひと}}",
+        "Chinese": "男人"
+    },
+    {
+        "Kana": "おととい",
+        "Kanji": "一昨日",
+        "Phonetic": "{{一昨日,おととい}}",
+        "Chinese": "前天"
+    },
+    {
+        "Kana": "おなか",
+        "Kanji": "お腹",
+        "Phonetic": "お{{腹,なか}}",
+        "Chinese": "肚子"
+    },
+    {
+        "Kana": "おにいさん",
+        "Kanji": "お兄さん",
+        "Phonetic": "お{{兄,にい}}さん",
+        "Chinese": "令兄，您的哥哥；提及別人的哥哥時用"
+    },
+    {
+        "Kana": "おねえさん",
+        "Kanji": "お姉さん",
+        "Phonetic": "お{{姉,ねえ}}さん",
+        "Chinese": "令姊，您的姊姊；提及別人的姊姊時用"
+    },
+    {
+        "Kana": "おばあさん",
+        "Kanji": "おばあさん",
+        "Phonetic": "おばあさん",
+        "Chinese": ["① 您奶奶，您外婆：提及別人的奶奶或外婆時用","② 老奶奶：指年紀大的女性"]
+    },
+    {
+        "Kana": "おふろ",
+        "Kanji": "お風呂",
+        "Phonetic": "お{{風呂,ふろ}}",
+        "Chinese": "浴室，澡堂"
+    },
+    {
+        "Kana": "おべんとう",
+        "Kanji": "お弁当",
+        "Phonetic": "お{{弁当,べんとう}}",
+        "Chinese": "盒飯，便當"
+    },
+    {
+        "Kana": "おぼえます",
+        "Kanji": "覚えます",
+        "Phonetic": "{{覚,おぼ}}えます",
+        "Chinese": "記，背，記住"
+    },
+    {
+        "Kana": "おみやげ",
+        "Kanji": "お土産",
+        "Phonetic": "お{{土産,みやげ}}",
+        "Chinese": "伴手禮，禮品"
+    },
+    {
+        "Kana": "おもい",
+        "Kanji": "重い",
+        "Phonetic": "{{重,おも}}い",
+        "Chinese": "重的"
+    },
+    
+
+
+    {
+        "Kana": "おもいます",
+        "Kanji": "思います",
+        "Phonetic": "{{思,おも}}います",
+        "Chinese": "想，認為；覺得，感覺"
+    },
+    {
+        "Kana": "おもしろい",
+        "Kanji": "面白い",
+        "Phonetic": "{{面白,おもし}}い",
+        "Chinese": "有意思，有趣，好玩"
+    },
+    {
+        "Kana": "およぎます",
+        "Kanji": "泳ぎます",
+        "Phonetic": "{{泳,およ}}ぎます",
+        "Chinese": "游泳"
+    },
+    {
+        "Kana": "おります",
+        "Kanji": "降ります",
+        "Phonetic": "{{降,お}}ります",
+        "Chinese": "下車"
+    },
+    {
+        "Kana": "おわります",
+        "Kanji": "終わります",
+        "Phonetic": "{{終,お}}わります",
+        "Chinese": "結束"
+    },
+    {
+        "Kana": "おんがく",
+        "Kanji": "音楽",
+        "Phonetic": "{{音楽,おんがく}}",
+        "Chinese": "音樂"
+    },
+    {
+        "Kana": "おんせん",
+        "Kanji": "温泉",
+        "Phonetic": "{{温泉,おんせん}}",
+        "Chinese": "溫泉"
+    },
+    {
+        "Kana": "おんなのひと",
+        "Kanji": "女の人",
+        "Phonetic": "{{女,おんな}}の{{人,ひと}}",
+        "Chinese": "女人，女子"
+    },
+    {
+        "Kana": "おのみもの",
+        "Kanji": "お飲み物",
+        "Phonetic": "お{{飲み物,のみもの}}",
+        "Chinese": "飲料：「飲み物（のみもの）」的禮貌表達"
+    },
+    {
+        "Kana": "おはなし",
+        "Kanji": "お話",
+        "Phonetic": "お{{話,はなし}}",
+        "Chinese": "話；故事：「話（はなし）」的禮貌表達"
+    },
+    {
+        "Kana": "か（かようび）",
+        "Kanji": "火（火曜日）",
+        "Phonetic": "{{火,か}}（{{火曜日,かようび}}）",
+        "Chinese": "星期二，週二"
+    },
+    {
+        "Kana": "かいぎ",
+        "Kanji": "会議",
+        "Phonetic": "{{会議,かいぎ}}",
+        "Chinese": "會議"
+    },
+    {
+        "Kana": "かいぎ（を）します",
+        "Kanji": "会議（を）します",
+        "Phonetic": "{{会議,かいぎ}}（を）します",
+        "Chinese": "開會，舉行會議"
+    },
+    {
+        "Kana": "かいぎしつ",
+        "Kanji": "会議室",
+        "Phonetic": "{{会議室,かいぎしつ}}",
+        "Chinese": "會議室"
+    },
+    {
+        "Kana": "がいこく",
+        "Kanji": "外国",
+        "Phonetic": "{{外国,がいこく}}",
+        "Chinese": "外國，國外"
+    },
+    {
+        "Kana": "かいしゃ",
+        "Kanji": "会社",
+        "Phonetic": "{{会社,かいしゃ}}",
+        "Chinese": "公司"
+    },
+    {
+        "Kana": "かいじょう",
+        "Kanji": "会場",
+        "Phonetic": "{{会場,かいじょう}}",
+        "Chinese": "會場"
+    },
+    {
+        "Kana": "かいます",
+        "Kanji": "買います",
+        "Phonetic": "{{買,か}}います",
+        "Chinese": "買"
+    },
+    {
+        "Kana": "かいもの",
+        "Kanji": "買い物",
+        "Phonetic": "{{買い物,かいもの}}",
+        "Chinese": "購物"
+    },
+    {
+        "Kana": "かいもの（を）します",
+        "Kanji": "買い物（を）します",
+        "Phonetic": "{{買い物,かいもの}}（を）します",
+        "Chinese": "買東西，購物"
+    },
+    {
+        "Kana": "かえってきます",
+        "Kanji": "帰ってきます",
+        "Phonetic": "{{帰,かえ}}ってきます",
+        "Chinese": "回來"
+    },
+    {
+        "Kana": "かえります",
+        "Kanji": "帰ります",
+        "Phonetic": "{{帰,かえ}}ります",
+        "Chinese": "回，回家"
+    },
+    {
+        "Kana": "かお",
+        "Kanji": "顔",
+        "Phonetic": "{{顔,かお}}",
+        "Chinese": "臉"
+    },
+    {
+        "Kana": "（おかねが）かかります",
+        "Kanji": "（お金が）かかります",
+        "Phonetic": "（{{お金,おかね}}が）かかります",
+        "Chinese": "花錢"
+    },
+    {
+        "Kana": "（じかんが）かかります",
+        "Kanji": "（時間が）かかります",
+        "Phonetic": "（{{時間,じかん}}が）かかります",
+        "Chinese": "花時間"
+    },
+
+
+    {
+        "Kana": "かぎ",
+        "Kanji": "鍵",
+        "Phonetic": "{{鍵,かぎ}}",
+        "Chinese": "鑰匙"
+    },
+    {
+        "Kana": "かきます",
+        "Kanji": "書きます",
+        "Phonetic": "{{書,か}}きます",
+        "Chinese": "寫"
+    },
+    {
+        "Kana": "（えを）かきます",
+        "Kanji": "（絵を）書きます",
+        "Phonetic": "{{（絵,え}}を）{{書,か}}きます",
+        "Chinese": "畫（畫，圖）"
+    },
+    {
+        "Kana": "がくせい",
+        "Kanji": "学生",
+        "Phonetic": "{{学生,がくせい}}",
+        "Chinese": "學生"
+    },
+    {
+        "Kana": "（でんわを）かけます",
+        "Kanji": "（電話を）かけます",
+        "Phonetic": "{{（電話,でんわ}}を）{{かけ,か}}ます",
+        "Chinese": "打（電話）"
+    },
+    {
+        "Kana": "かさ",
+        "Kanji": "傘",
+        "Phonetic": "{{傘,かさ}}",
+        "Chinese": "傘"
+    },
+    {
+        "Kana": "かします",
+        "Kanji": "貸します",
+        "Phonetic": "{{貸,か}}します",
+        "Chinese": "借給人；借出"
+    },
+    {
+        "Kana": "かぞく",
+        "Kanji": "家族",
+        "Phonetic": "{{家族,かぞく}}",
+        "Chinese": "家人"
+    },
+    {
+        "Kana": "かた",
+        "Kanji": "方",
+        "Phonetic": "{{方,かた}}",
+        "Chinese": "「人（ひと）」的禮貌表達"
+    },
+    {
+        "Kana": "～かた",
+        "Kanji": "～方",
+        "Phonetic": "{{～方,～かた}}",
+        "Chinese": "「～たち」的禮貌表達；各位，們"
+    },
+    {
+        "Kana": "かたち",
+        "Kanji": "形",
+        "Phonetic": "{{形,かたち}}",
+        "Chinese": "形狀，外形"
+    },
+    {
+        "Kana": "がっこう",
+        "Kanji": "学校",
+        "Phonetic": "{{学校,がっこう}}",
+        "Chinese": "學校"
+    },
+    {
+        "Kana": "かってきます",
+        "Kanji": "買ってきます",
+        "Phonetic": "{{買,か}}ってきます",
+        "Chinese": "買來"
+    },
+    {
+        "Kana": "かばん",
+        "Kanji": "鞄",
+        "Phonetic": "{{鞄,かばん}}",
+        "Chinese": "包"
+    },
+    {
+        "Kana": "（ぼうしを）かぶります",
+        "Kanji": "（ぼうしを）かぶります",
+        "Phonetic": "（ぼうしを）かぶります",
+        "Chinese": "戴帽子"
+    },
+    {
+        "Kana": "かみ",
+        "Kanji": "紙",
+        "Phonetic": "{{紙,かみ}}",
+        "Chinese": "紙"
+    },
+    {
+        "Kana": "かみしばい",
+        "Kanji": "紙芝居",
+        "Phonetic": "{{紙芝居,かみしばい}}",
+        "Chinese": "紙劇場"
+    },
+    {
+        "Kana": "カメラ",
+        "Kanji": "カメラ",
+        "Phonetic": "カメラ",
+        "Chinese": "照相機"
+    },
+    {
+        "Kana": "～から",
+        "Kanji": "～から",
+        "Phonetic": "～から",
+        "Chinese": "從"
+    },
+    {
+        "Kana": "からい",
+        "Kanji": "辛い",
+        "Phonetic": "{{辛,から}}い",
+        "Chinese": "辣"
+    },
+    {
+        "Kana": "カラオケ",
+        "Kanji": "カラオケ",
+        "Phonetic": "カラオケ",
+        "Chinese": "卡拉 OK"
+    },
+    {
+        "Kana": "カラオケ（を）する",
+        "Kanji": "カラオケ（を）する",
+        "Phonetic": "カラオケ（を）する",
+        "Chinese": "唱卡拉 OK"
+    },
+    {
+        "Kana": "からだ",
+        "Kanji": "体",
+        "Phonetic": "{{体,からだ}}",
+        "Chinese": "身體"
+    },
+    {
+        "Kana": "かります",
+        "Kanji": "借ります",
+        "Phonetic": "{{借,か}}ります",
+        "Chinese": "向人借；借來"
+    },
+    {
+        "Kana": "かるい",
+        "Kanji": "軽い",
+        "Phonetic": "{{軽,かる}}い",
+        "Chinese": "輕的"
+    },
+
+    {
+        "Kana": "カレー",
+        "Kanji": "カレー",
+        "Phonetic": "カレー",
+        "Chinese": "咖哩"
+    },
+    {
+        "Kana": "カレンダー",
+        "Kanji": "カレンダー",
+        "Phonetic": "カレンダー",
+        "Chinese": "日曆，月曆"
+    },
+    {
+        "Kana": "かわ",
+        "Kanji": "川",
+        "Phonetic": "{{川,かわ}}",
+        "Chinese": "河"
+    },
+    {
+        "Kana": "かんがえます",
+        "Kanji": "かんがえます",
+        "Phonetic": "かんがえます",
+        "Chinese": "考慮，思考，想"
+    },
+    {
+        "Kana": "かんこく",
+        "Kanji": "韓国",
+        "Phonetic": "{{韓国,かんこく}}",
+        "Chinese": "韓國"
+    },
+    {
+        "Kana": "かんじ",
+        "Kanji": "漢字",
+        "Phonetic": "{{漢字,かんじ}}",
+        "Chinese": "漢字"
+    },
+    {
+        "Kana": "かんたん",
+        "Kanji": "かんたん",
+        "Phonetic": "かんたん",
+        "Chinese": "簡單"
+    },
+    {
+        "Kana": "き",
+        "Kanji": "木",
+        "Phonetic": "{{木,き}}",
+        "Chinese": "木，木頭"
+    },
+    {
+        "Kana": "（おんがくを）ききます",
+        "Kanji": "（音楽を）聞きます",
+        "Phonetic": "（{{音楽,おんがく}}を）{{聞,き}}きます",
+        "Chinese": "聽音樂"
+    },
+    {
+        "Kana": "（ともだちに／ せんせいに）ききます",
+        "Kanji": "（友だちに／先生に）聞きます",
+        "Phonetic": "（{{友,とも}}だちに／{{先生,せんせい}}に）{{聞,き}}きます",
+        "Chinese": "問朋友／老師"
+    },
+    {
+        "Kana": "きた",
+        "Kanji": "北",
+        "Phonetic": "{{北,きた}}",
+        "Chinese": "北，北邊"
+    },
+    {
+        "Kana": "ギター",
+        "Kanji": "ギター",
+        "Phonetic": "ギター",
+        "Chinese": "吉他"
+    },
+    {
+        "Kana": "きたない",
+        "Kanji": "髒",
+        "Phonetic": "{{髒,きたない}}",
+        "Chinese": "髒的"
+    },
+    {
+        "Kana": "きっさてん",
+        "Kanji": "喫茶店",
+        "Phonetic": "{{喫茶店,きっさてん}}",
+        "Chinese": "咖啡店，茶館"
+    },
+    {
+        "Kana": "きっぷ",
+        "Kanji": "切符",
+        "Phonetic": "{{切符,きっぷ}}",
+        "Chinese": "票"
+    },
+    {
+        "Kana": "きのう",
+        "Kanji": "昨日",
+        "Phonetic": "{{昨日,きのう}}",
+        "Chinese": "昨天"
+    },
+    {
+        "Kana": "（せいかくが）きびしい",
+        "Kanji": "（性格が）厳しい",
+        "Phonetic": "（{{性格,せいかく}}が）{{厳,きび}}しい",
+        "Chinese": "（性格）嚴肅，嚴厲"
+    },
+    {
+        "Kana": "きます",
+        "Kanji": "来ます",
+        "Phonetic": "{{来,き}}ます",
+        "Chinese": "來"
+    },
+    {
+        "Kana": "（ふくを）きます",
+        "Kanji": "（服を）着ます",
+        "Phonetic": "（{{服,ふく}}を）{{着,き}}ます",
+        "Chinese": "穿衣服"
+    },
+    {
+        "Kana": "きまります",
+        "Kanji": "決まります",
+        "Phonetic": "{{決,き}}まります",
+        "Chinese": "決定"
+    },
+    {
+        "Kana": "きめます",
+        "Kanji": "決めます",
+        "Phonetic": "{{決,き}}めます",
+        "Chinese": "決定，做決定"
+    },
+    {
+        "Kana": "きもちがいい",
+        "Kanji": "気持ちがいい",
+        "Phonetic": "{{気持,きも}}ちがいい",
+        "Chinese": "舒服，心理上生理上舒暢"
+    },
+    {
+        "Kana": "きゃく",
+        "Kanji": "客",
+        "Phonetic": "{{客,きゃく}}",
+        "Chinese": "客人，顧客"
+    },
+    {
+        "Kana": "ぎゅうにゅう",
+        "Kanji": "牛乳",
+        "Phonetic": "{{牛乳,ぎゅうにゅう}}",
+        "Chinese": "牛奶"
+    },
+    {
+        "Kana": "きょう",
+        "Kanji": "今日",
+        "Phonetic": "{{今日,きょう}}",
+        "Chinese": "今天"
+    },
+    {
+        "Kana": "きょうしつ",
+        "Kanji": "教室",
+        "Phonetic": "{{教室,きょうしつ}}",
+        "Chinese": "教室"
+    },
+    {
+        "Kana": "きょうだい",
+        "Kanji": "兄弟",
+        "Phonetic": "{{兄弟,きょうだい}}",
+        "Chinese": "兄弟；兄弟姐妹"
+    },
+
+
+
+
+
+
+    {
+        "Kana": "きょねん",
+        "Kanji": "去年",
+        "Phonetic": "{{去年,きょねん}}",
+        "Chinese": "去年"
+    },
+    {
+        "Kana": "きらい",
+        "Kanji": "きらい",
+        "Phonetic": "きらい",
+        "Chinese": "討厭，厭煩"
+    },
+    {
+        "Kana": "きります",
+        "Kanji": "切ります",
+        "Phonetic": "{{切,き}}ります",
+        "Chinese": "切，割；砍，剁；中斷"
+    },
+    {
+        "Kana": "（へやが）きれい",
+        "Kanji": "（部屋が）きれい",
+        "Phonetic": "（{{部屋,へや}}が）きれい",
+        "Chinese": "（房間）乾淨"
+    },
+    {
+        "Kana": "（けしきが）きれい",
+        "Kanji": "（景色が）きれい",
+        "Phonetic": "（{{景色,けしき}}が）きれい",
+        "Chinese": "（景色）美，漂亮"
+    },
+    {
+        "Kana": "きれいに",
+        "Kanji": "きれいに",
+        "Phonetic": "きれいに",
+        "Chinese": "乾乾淨淨地；完完全全地"
+    },
+    {
+        "Kana": "きん（きんようび）",
+        "Kanji": "金（金曜日）",
+        "Phonetic": "{{金,きん}}（{{金曜日,きんようび}}）",
+        "Chinese": "星期五，週五"
+    },
+    {
+        "Kana": "ぎんこう",
+        "Kanji": "銀行",
+        "Phonetic": "{{銀行,ぎんこう}}",
+        "Chinese": "銀行"
+    },
+    {
+        "Kana": "くうこう",
+        "Kanji": "空港",
+        "Phonetic": "{{空港,くうこう}}",
+        "Chinese": "機場"
+    },
+    {
+        "Kana": "くすり",
+        "Kanji": "薬",
+        "Phonetic": "{{薬,くすり}}",
+        "Chinese": "藥"
+    },
+    {
+        "Kana": "ください",
+        "Kanji": "請",
+        "Phonetic": "{{請,ください}}",
+        "Chinese": "給我"
+    },
+    {
+        "Kana": "くだもの",
+        "Kanji": "水果",
+        "Phonetic": "{{水果,くだもの}}",
+        "Chinese": "水果"
+    },
+    {
+        "Kana": "くつ",
+        "Kanji": "鞋子",
+        "Phonetic": "{{鞋子,くつ}}",
+        "Chinese": "鞋子"
+    },
+    {
+        "Kana": "くに",
+        "Kanji": "国",
+        "Phonetic": "{{国,くに}}",
+        "Chinese": "國家"
+    },
+    {
+        "Kana": "～くらい",
+        "Kanji": "～くらい",
+        "Phonetic": "～くらい",
+        "Chinese": "～左右"
+    },
+    {
+        "Kana": "くるま",
+        "Kanji": "車",
+        "Phonetic": "{{車,くるま}}",
+        "Chinese": "車"
+    },
+    {
+        "Kana": "くろい",
+        "Kanji": "黒い",
+        "Phonetic": "{{黒,くろ}}い",
+        "Chinese": "黑，黑的"
+    },
+    {
+        "Kana": "けいたいでんわ",
+        "Kanji": "けいたい電話",
+        "Phonetic": "けいたい{{電話,でんわ}}",
+        "Chinese": "手機"
+    },
+    {
+        "Kana": "ケーキ",
+        "Kanji": "ケーキ",
+        "Phonetic": "ケーキ",
+        "Chinese": "蛋糕"
+    },
+    {
+        "Kana": "ケース",
+        "Kanji": "ケース",
+        "Phonetic": "ケース",
+        "Chinese": "盒子，箱子；事件，情況"
+    },
+    {
+        "Kana": "ゲーム",
+        "Kanji": "ゲーム",
+        "Phonetic": "ゲーム",
+        "Chinese": "遊戲，電玩"
+    },
+    {
+        "Kana": "ゲーム（を）します",
+        "Kanji": "ゲーム（を）する",
+        "Phonetic": "ゲーム（を）する",
+        "Chinese": "玩遊戲，玩電玩"
+    },
+    {
+        "Kana": "けさ",
+        "Kanji": "今朝",
+        "Phonetic": "{{今朝,けさ}}",
+        "Chinese": "今天早上"
+    },
+    {
+        "Kana": "けしき",
+        "Kanji": "景色",
+        "Phonetic": "{{景色,けしき}}",
+        "Chinese": "景色"
+    },
+    {
+        "Kana": "けしゴム",
+        "Kanji": "消しゴム",
+        "Phonetic": "{{消,け}}しゴム",
+        "Chinese": "橡皮擦"
+    },
+    {
+        "Kana": "けします",
+        "Kanji": "けします",
+        "Phonetic": "けします",
+        "Chinese": "擦，抹去；熄滅，關"
+    },
+    {
+        "Kana": "げつ（げつようび）",
+        "Kanji": "月（月曜日）",
+        "Phonetic": "{{月,げつ}}（{{月曜日,げつようび}}）",
+        "Chinese": "星期一，週一"
+    },
+
+
+
+    {
+        "Kana": "けっこんします",
+        "Kanji": "結婚します",
+        "Phonetic": "{{結婚,けっこん}}します",
+        "Chinese": "結婚"
+    },
+    {
+        "Kana": "げつようび",
+        "Kanji": "月曜日",
+        "Phonetic": "{{月曜日,げつようび}}",
+        "Chinese": "星期一"
+    },
+    {
+        "Kana": "けんがく",
+        "Kanji": "見学",
+        "Phonetic": "{{見学,けんがく}}",
+        "Chinese": "參觀學習"
+    },
+    {
+        "Kana": "げんき",
+        "Kanji": "元気",
+        "Phonetic": "{{元気,げんき}}",
+        "Chinese": "精神，朝氣；健康"
+    },
+    {
+        "Kana": "げんきがない",
+        "Kanji": "元気がない",
+        "Phonetic": "{{元気,げんき}}がない",
+        "Chinese": "無精打采，沒精神"
+    },
+    {
+        "Kana": "こうえん",
+        "Kanji": "公園",
+        "Phonetic": "{{公園,こうえん}}",
+        "Chinese": "公園"
+    },
+    {
+        "Kana": "こうちゃ",
+        "Kanji": "こう茶",
+        "Phonetic": "こう{{茶,ちゃ}}",
+        "Chinese": "紅茶"
+    },
+    {
+        "Kana": "こうばん",
+        "Kanji": "交番",
+        "Phonetic": "{{交番,こうばん}}",
+        "Chinese": "派出所"
+    },
+    {
+        "Kana": "コート",
+        "Kanji": "コート",
+        "Phonetic": "コート",
+        "Chinese": "大衣，外套"
+    },
+    {
+        "Kana": "コーヒー",
+        "Kanji": "コーヒー",
+        "Phonetic": "コーヒー",
+        "Chinese": "咖啡"
+    },
+    {
+        "Kana": "ごかぞく",
+        "Kanji": "ご家族",
+        "Phonetic": "ご{{家族,かぞく}}",
+        "Chinese": "您的家人：提及別人的家人時用「ご家族」"
+    },
+    {
+        "Kana": "ごきょうだい",
+        "Kanji": "ご兄弟",
+        "Phonetic": "ご{{兄弟,きょうだい}}",
+        "Chinese": "您的兄弟姐妹：提及別人的手足時用「ご兄弟」"
+    },
+    {
+        "Kana": "ここ",
+        "Kanji": "ここ",
+        "Phonetic": "ここ",
+        "Chinese": "這兒，這裡"
+    },
+    {
+        "Kana": "ごご",
+        "Kanji": "午後",
+        "Phonetic": "{{午後,ごご}}",
+        "Chinese": "下午"
+    },
+    {
+        "Kana": "ございます",
+        "Kanji": "ございます",
+        "Phonetic": "ございます",
+        "Chinese": "有：「あります」的禮貌表達"
+    },
+    {
+        "Kana": "ごじゆうに",
+        "Kanji": "ごじゆうに",
+        "Phonetic": "ごじゆうに",
+        "Chinese": "自由地，隨意地：「じゆうに」的禮貌表達"
+    },
+    {
+        "Kana": "ごしゅじん",
+        "Kanji": "ご主人",
+        "Phonetic": "ご{{主人,しゅじん}}",
+        "Chinese": "尊夫，您的先生：提及別人的先生時用「ご主人」"
+    },
+    {
+        "Kana": "ごぜん",
+        "Kanji": "午前",
+        "Phonetic": "{{午前,ごぜん}}",
+        "Chinese": "上午"
+    },
+    {
+        "Kana": "こたえ",
+        "Kanji": "答え",
+        "Phonetic": "{{答,こた}}え",
+        "Chinese": "答案，回覆"
+    },
+    {
+        "Kana": "こたえます",
+        "Kanji": "答えます",
+        "Phonetic": "{{答,こた}}えます",
+        "Chinese": "回答，回覆"
+    },
+    {
+        "Kana": "こちら",
+        "Kanji": "こちら",
+        "Phonetic": "こちら",
+        "Chinese": "這兒，這裡"
+    },
+    {
+        "Kana": "こっち",
+        "Kanji": "こっち",
+        "Phonetic": "こっち",
+        "Chinese": "這邊「こちら」的非正式口語說法"
+    },
+    
+    {
+        "Kana": "コップ",
+        "Kanji": "コップ",
+        "Phonetic": "コップ",
+        "Chinese": "杯子"
+    },
+    {
+        "Kana": "ことし",
+        "Kanji": "今年",
+        "Phonetic": "{{今年,ことし}}",
+        "Chinese": "今年"
+    },
+    {
+        "Kana": "ことば",
+        "Kanji": "ことば",
+        "Phonetic": "こと{{言,ば}}",
+        "Chinese": "語言；言辭；詞語"
+    },
+    {
+        "Kana": "こども",
+        "Kanji": "子ども",
+        "Phonetic": "{{子,こ}}ども",
+        "Chinese": "孩子"
+    },
+    {
+        "Kana": "こどもさん",
+        "Kanji": "子どもさん",
+        "Phonetic": "{{子,こ}}どもさん",
+        "Chinese": "您的孩子：提及別人的孩子時用「子どもさん」"
+    },
+    {
+        "Kana": "この～",
+        "Kanji": "この～",
+        "Phonetic": "この～",
+        "Chinese": "這個"
+    },
+    {
+        "Kana": "このあと",
+        "Kanji": "このあと",
+        "Phonetic": "このあと",
+        "Chinese": "之後，隨後"
+    },
+    {
+        "Kana": "このへん",
+        "Kanji": "このへん",
+        "Phonetic": "このへん",
+        "Chinese": "這一帶，這附近"
+    },
+    {
+        "Kana": "ごはん",
+        "Kanji": "ご飯",
+        "Phonetic": "ご{{飯,はん}}",
+        "Chinese": "飯，米飯"
+    },
+    {
+        "Kana": "コピー",
+        "Kanji": "コピー",
+        "Phonetic": "コピー",
+        "Chinese": "影印，副本"
+    },
+    {
+        "Kana": "コピー（を）します",
+        "Kanji": "コピー（を）します",
+        "Phonetic": "コピー（を）します",
+        "Chinese": "影印，複製"
+    },
+    {
+        "Kana": "ごりょうしん",
+        "Kanji": "ご両親",
+        "Phonetic": "ご{{両親,りょうしん}}",
+        "Chinese": "令尊令堂，您的父母：提及別人的雙親時用「ご両親」"
+    },
+    {
+        "Kana": "これ",
+        "Kanji": "これ",
+        "Phonetic": "これ",
+        "Chinese": "這個"
+    },
+    {
+        "Kana": "これから",
+        "Kanji": "これから",
+        "Phonetic": "これから",
+        "Chinese": "從此，從今以後，從現在起"
+    },
+    {
+        "Kana": "～ごろ",
+        "Kanji": "～ごろ",
+        "Phonetic": "～ごろ",
+        "Chinese": "～左右（例：10點左右）"
+    },
+    {
+        "Kana": "コンサート",
+        "Kanji": "コンサート",
+        "Phonetic": "コンサート",
+        "Chinese": "音樂會，演唱會"
+    },
+    {
+        "Kana": "こんど",
+        "Kanji": "今度",
+        "Phonetic": "{{今度,こんど}}",
+        "Chinese": "這次，本次"
+    },
+    {
+        "Kana": "こんばん",
+        "Kanji": "今晩",
+        "Phonetic": "{{今晩,こんばん}}",
+        "Chinese": "今晚"
+    },
+    {
+        "Kana": "コンビニ",
+        "Kanji": "コンビニ",
+        "Phonetic": "コンビニ",
+        "Chinese": "便利商店"
+    },
+    {
+        "Kana": "コンピューター",
+        "Kanji": "コンピューター",
+        "Phonetic": "コンピューター",
+        "Chinese": "電腦"
+    },
+    {
+        "Kana": "さかな",
+        "Kanji": "魚",
+        "Phonetic": "{{魚,さかな}}",
+        "Chinese": "魚"
+    },
+    {
+        "Kana": "さきに",
+        "Kanji": "先に",
+        "Phonetic": "{{先,さき}}に",
+        "Chinese": "先；先前，前面"
+    },
+    {
+        "Kana": "さきます",
+        "Kanji": "さきます",
+        "Phonetic": "さきます",
+        "Chinese": "開（花）"
+    },
+    {
+        "Kana": "さくぶん",
+        "Kanji": "作文",
+        "Phonetic": "{{作文,さくぶん}}",
+        "Chinese": "作文；造句"
+    },
+    {
+        "Kana": "さくら",
+        "Kanji": "さくら",
+        "Phonetic": "さくら",
+        "Chinese": "櫻花"
+    },
+    {
+        "Kana": "さしみ",
+        "Kanji": "刺身",
+        "Phonetic": "{{刺身,さしみ}}",
+        "Chinese": "生魚片"
+    },
+    {
+        "Kana": "サッカー",
+        "Kanji": "サッカー",
+        "Phonetic": "サッカー",
+        "Chinese": "足球"
+    },
+    {
+        "Kana": "さっき",
+        "Kanji": "さっき",
+        "Phonetic": "さっき",
+        "Chinese": "剛才"
+    },
+    {
+        "Kana": "ざっし",
+        "Kanji": "ざっし",
+        "Phonetic": "ざっし",
+        "Chinese": "雜誌"
+    },
+    {
+        "Kana": "さむい",
+        "Kanji": "さむい",
+        "Phonetic": "さむい",
+        "Chinese": "寒冷的"
+    },
+    {
+        "Kana": "～さん",
+        "Kanji": "～さん",
+        "Phonetic": "～さん",
+        "Chinese": "～先生 小姐：稱呼對方名字時置於名字後，沒加的話不禮貌。"
+    },
+    {
+        "Kana": "サンドイッチ",
+        "Kanji": "サンドイッチ",
+        "Phonetic": "サンドイッチ",
+        "Chinese": "三明治"
+    },
+    {
+        "Kana": "ざんねん",
+        "Kanji": "ざんねん",
+        "Phonetic": "ざんねん",
+        "Chinese": "可惜，遺憾"
+    },
+    {
+        "Kana": "さんぽ",
+        "Kanji": "さんぽ",
+        "Phonetic": "さんぽ",
+        "Chinese": "散步"
+    },
+    {
+        "Kana": "さんぽ（を）します",
+        "Kanji": "さんぽ（を）します",
+        "Phonetic": "さんぽ（を）します",
+        "Chinese": "散步"
+    },
+    {
+        "Kana": "じ",
+        "Kanji": "字",
+        "Phonetic": "{{字,じ}}",
+        "Chinese": "字"
+    },
+    {
+        "Kana": "しあい",
+        "Kanji": "試合",
+        "Phonetic": "{{試合,しあい}}",
+        "Chinese": "比賽"
+    },
+    {
+        "Kana": "しかし",
+        "Kanji": "しかし",
+        "Phonetic": "しかし",
+        "Chinese": "但是"
+    },
+    {
+        "Kana": "じかん",
+        "Kanji": "時間",
+        "Phonetic": "{{時間,じかん}}",
+        "Chinese": "時間"
+    },
+    {
+        "Kana": "しけん",
+        "Kanji": "試験",
+        "Phonetic": "{{試験,しけん}}",
+        "Chinese": "考試"
+    },
+    {
+        "Kana": "しごと",
+        "Kanji": "仕事",
+        "Phonetic": "{{仕事,しごと}}",
+        "Chinese": "工作"
+    },
+    {
+        "Kana": "じしょ",
+        "Kanji": "辞書",
+        "Phonetic": "{{辞書,じしょ}}",
+        "Chinese": "辭典"
+    },
+    {
+        "Kana": "しずか",
+        "Kanji": "しずか",
+        "Phonetic": "しずか",
+        "Chinese": "安靜"
+    },
+    {
+        "Kana": "した",
+        "Kanji": "下",
+        "Phonetic": "{{下,した}}",
+        "Chinese": "下"
+    },
+    {
+        "Kana": "しっています",
+        "Kanji": "知っています",
+        "Phonetic": "{{知,し}}っています",
+        "Chinese": "知道"
+    },
+    {
+        "Kana": "しつもん",
+        "Kanji": "質問",
+        "Phonetic": "{{質問,しつもん}}",
+        "Chinese": "問題，提問"
+    },
+    {
+        "Kana": "じてんしゃ",
+        "Kanji": "自転車",
+        "Phonetic": "{{自転車,じてんしゃ}}",
+        "Chinese": "自行車"
+    },
+    {
+        "Kana": "しにます",
+        "Kanji": "しにます",
+        "Phonetic": "しにます",
+        "Chinese": "死，死亡"
+    },
+    {
+        "Kana": "します",
+        "Kanji": "します",
+        "Phonetic": "します",
+        "Chinese": "做"
+    },
+    {
+        "Kana": "じむしつ",
+        "Kanji": "じむ室",
+        "Phonetic": "じむ{{室,しつ}}",
+        "Chinese": "事務所，辦公室"
+    },
+    {
+        "Kana": "じゃ（＝じゃあ）",
+        "Kanji": "じゃ（＝じゃあ）",
+        "Phonetic": "じゃ（＝じゃあ）",
+        "Chinese": "那麼：「では」的非正式口語說法"
+    },
+    {
+        "Kana": "じゃあ（＝じゃ）",
+        "Kanji": "じゃあ（＝じゃ）",
+        "Phonetic": "じゃあ（＝じゃ）",
+        "Chinese": "那麼：「では」的非正式口語說法"
+    },
+    {
+        "Kana": "しゃしん",
+        "Kanji": "写真",
+        "Phonetic": "{{写真,しゃしん}}",
+        "Chinese": "照片"
+    },
+    {
+        "Kana": "シャツ",
+        "Kanji": "シャツ",
+        "Phonetic": "シャツ",
+        "Chinese": "襯衫"
+    },
+    {
+        "Kana": "シャワー",
+        "Kanji": "シャワー",
+        "Phonetic": "シャワー",
+        "Chinese": "淋浴，沖涼"
+    },
+    {
+        "Kana": "じゅうしょ",
+        "Kanji": "住所",
+        "Phonetic": "{{住所,じゅうしょ}}",
+        "Chinese": "地址"
+    },
+    {
+        "Kana": "ジュース",
+        "Kanji": "ジュース",
+        "Phonetic": "ジュース",
+        "Chinese": "果汁"
+    },
+    {
+        "Kana": "じゅぎょう",
+        "Kanji": "授業",
+        "Phonetic": "{{授業,じゅぎょう}}",
+        "Chinese": "（學校的）課，課程"
+    },
+    {
+        "Kana": "しゅくだい",
+        "Kanji": "宿題",
+        "Phonetic": "{{宿題,しゅくだい}}",
+        "Chinese": "作業"
+    },
+    {
+        "Kana": "しゅくだい（を）します",
+        "Kanji": "宿題（を）します",
+        "Phonetic": "{{宿題,しゅくだい}}（を）します",
+        "Chinese": "做作業"
+    },
+    {
+        "Kana": "しゅみ",
+        "Kanji": "しゅみ",
+        "Phonetic": "しゅみ",
+        "Chinese": "興趣，愛好"
+    },
+    {
+        "Kana": "しゅるい",
+        "Kanji": "しゅるい",
+        "Phonetic": "しゅるい",
+        "Chinese": "種類"
+    },
+    {
+        "Kana": "じゅんばん",
+        "Kanji": "じゅんばん",
+        "Phonetic": "じゅんばん",
+        "Chinese": "順序"
+    },
+    {
+        "Kana": "じょうず",
+        "Kanji": "上手",
+        "Phonetic": "{{上手,じょうず}}",
+        "Chinese": "擅長，拿手；好，高明"
+    },
+    {
+        "Kana": "じょうぶ",
+        "Kanji": "じょうぶ",
+        "Phonetic": "じょうぶ",
+        "Chinese": "健康，健壯；結實，牢固"
+    },
+    {
+        "Kana": "しょくじ",
+        "Kanji": "食事",
+        "Phonetic": "{{食事,しょくじ}}",
+        "Chinese": "餐，用餐"
+    },
+    {
+        "Kana": "しょくじ（を）します",
+        "Kanji": "食事（を）します",
+        "Phonetic": "{{食事,しょくじ}}（を）します",
+        "Chinese": "吃飯，用餐"
+    },
+    {
+        "Kana": "しょくどう",
+        "Kanji": "食堂",
+        "Phonetic": "{{食堂,しょくどう}}",
+        "Chinese": "食堂"
+    },
+    {
+        "Kana": "しらべます",
+        "Kanji": "しらべます",
+        "Phonetic": "しらべます",
+        "Chinese": "調查，檢查；搜索 搜查"
+    },
+    {
+        "Kana": "しりょう",
+        "Kanji": "資料",
+        "Phonetic": "{{資料,しりょう}}",
+        "Chinese": "資料"
+    },
+    {
+        "Kana": "しろ",
+        "Kanji": "白",
+        "Phonetic": "{{白,しろ}}",
+        "Chinese": "白，白色"
+    },
+    {
+        "Kana": "しろい",
+        "Kanji": "白い",
+        "Phonetic": "{{白,しろ}}い",
+        "Chinese": "白的"
+    },
+    {
+        "Kana": "しんかんせん",
+        "Kanji": "新幹線",
+        "Phonetic": "{{新幹線,しんかんせん}}",
+        "Chinese": "新幹線"
+    },
+    {
+        "Kana": "しんせつ",
+        "Kanji": "親切",
+        "Phonetic": "{{親切,しんせつ}}",
+        "Chinese": "親切，友善"
+    },
+    {
+        "Kana": "しんぱい",
+        "Kanji": "心配",
+        "Phonetic": "{{心配,しんぱい}}",
+        "Chinese": "擔心"
+    },
+    {
+        "Kana": "しんぱいします",
+        "Kanji": "心配します",
+        "Phonetic": "{{心配,しんぱい}}します",
+        "Chinese": "擔心"
+    },
+    {
+        "Kana": "しんぶん",
+        "Kanji": "新聞",
+        "Phonetic": "{{新聞,しんぶん}}",
+        "Chinese": "報紙"
+    },
+    {
+        "Kana": "すい（＝すいようび）",
+        "Kanji": "水（＝水曜日）",
+        "Phonetic": "{{水,すい}}（＝{{水曜日,すいようび}}）",
+        "Chinese": "星期三，週三"
+    },
+    {
+        "Kana": "すいえい",
+        "Kanji": "水泳",
+        "Phonetic": "{{水泳,すいえい}}",
+        "Chinese": "游泳"
+    },
+    {
+        "Kana": "（タバコを）すいます",
+        "Kanji": "（タバコを）吸います",
+        "Phonetic": "（タバコを）{{吸います,すいます}}",
+        "Chinese": "吸煙"
+    },
+    {
+        "Kana": "すいようび",
+        "Kanji": "水曜日",
+        "Phonetic": "{{水曜日,すいようび}}",
+        "Chinese": "星期三"
+    },
+    {
+        "Kana": "スーツ",
+        "Kanji": "スーツ",
+        "Phonetic": "スーツ",
+        "Chinese": "西裝，套裝"
+    },
+    {
+        "Kana": "スーパー",
+        "Kanji": "スーパー",
+        "Phonetic": "スーパー",
+        "Chinese": "超市，超級市場"
+    },
+    {
+        "Kana": "すき",
+        "Kanji": "好き",
+        "Phonetic": "{{好,す}}き",
+        "Chinese": "喜歡"
+    },
+    {
+        "Kana": "～すぎ",
+        "Kanji": "～過ぎ",
+        "Phonetic": "～{{過,す}}ぎ}}",
+        "Chinese": "過～（例如：過 7 點）"
+    },
+    {
+        "Kana": "スキー",
+        "Kanji": "スキー",
+        "Phonetic": "スキー",
+        "Chinese": "滑雪"
+    },
+    {
+        "Kana": "すきなもの",
+        "Kanji": "好きなもの",
+        "Phonetic": "{{好,す}}きなもの",
+        "Chinese": "喜歡的東西"
+    },
+    {
+        "Kana": "（おなかが）すきます",
+        "Kanji": "（お腹が）すきます",
+        "Phonetic": "（お{{腹,なか}}が）すきます",
+        "Chinese": "（肚子）餓"
+    },
+    {
+        "Kana": "すぐ（＝すぐに）",
+        "Kanji": "すぐ（＝すぐに）",
+        "Phonetic": "すぐ（＝すぐに）",
+        "Chinese": "馬上"
+    },
+    {
+        "Kana": "スケート",
+        "Kanji": "スケート",
+        "Phonetic": "スケート",
+        "Chinese": "滑冰"
+    },
+    {
+        "Kana": "すこし",
+        "Kanji": "少し",
+        "Phonetic": "{{少,すこ}}し",
+        "Chinese": "一點兒，稍微，稍許"
+    },
+    {
+        "Kana": "すずしい",
+        "Kanji": "涼しい",
+        "Phonetic": "{{涼,すず}}しい",
+        "Chinese": "涼快"
+    },
+    {
+        "Kana": "～ずつ",
+        "Kanji": "～ずつ",
+        "Phonetic": "～ずつ",
+        "Chinese": "每～（量）\n例如：1 日 3 回ずつ（每天三次）、少しずつ食べる（一點一點吃）"
+    },
+    {
+        "Kana": "ストーブ",
+        "Kanji": "ストーブ",
+        "Phonetic": "ストーブ",
+        "Chinese": "暖爐，火爐"
+    },
+    {
+        "Kana": "スプーン",
+        "Kanji": "スプーン",
+        "Phonetic": "スプーン",
+        "Chinese": "湯匙"
+    },
+    {
+        "Kana": "スポーツ",
+        "Kanji": "スポーツ",
+        "Phonetic": "スポーツ",
+        "Chinese": "運動"
+    },
+    {
+        "Kana": "ズボン",
+        "Kanji": "ズボン",
+        "Phonetic": "ズボン",
+        "Chinese": "褲子"
+    },
+    {
+        "Kana": "すみます",
+        "Kanji": "住みます",
+        "Phonetic": "すみます",
+        "Chinese": "住"
+    },
+    {
+        "Kana": "すわります",
+        "Kanji": "座ります",
+        "Phonetic": "{{座,すわ}}ります",
+        "Chinese": "坐"
+    },
+    {
+        "Kana": "せ",
+        "Kanji": "背",
+        "Phonetic": "{{背,せ}}",
+        "Chinese": "個子，身高"
+    },
+    {
+        "Kana": "せいかつ",
+        "Kanji": "生活",
+        "Phonetic": "{{生活,せいかつ}}",
+        "Chinese": "生活"
+    },
+    {
+        "Kana": "セーター",
+        "Kanji": "セーター",
+        "Phonetic": "セーター",
+        "Chinese": "毛衣"
+    },
+    {
+        "Kana": "ぜひ",
+        "Kanji": "ぜひ",
+        "Phonetic": "ぜひ",
+        "Chinese": "一定，務必"
+    },
+    {
+        "Kana": "せまい",
+        "Kanji": "せまい",
+        "Phonetic": "せまい",
+        "Chinese": "狹小的，狹窄的"
+    },
+    {
+        "Kana": "せんしゅう",
+        "Kanji": "先週",
+        "Phonetic": "{{先週,せんしゅう}}",
+        "Chinese": "上週，上星期"
+    },
+    {
+        "Kana": "せんせい",
+        "Kanji": "先生",
+        "Phonetic": "{{先生,せんせい}}",
+        "Chinese": "老師"
+    },
+    {
+        "Kana": "ぜんぜん～ない",
+        "Kanji": "ぜんぜん～ない",
+        "Phonetic": "ぜんぜん～ない",
+        "Chinese": "完全沒有，完全不～"
+    },
+    {
+        "Kana": "せんたく（を）します",
+        "Kanji": "洗たく（を）します",
+        "Phonetic": "{{洗,せん}}たく（を）します",
+        "Chinese": "洗滌，洗衣服"
+    },
+    {
+        "Kana": "ぜんぶ",
+        "Kanji": "全部",
+        "Phonetic": "{{全部,ぜんぶ}}",
+        "Chinese": "全，全部"
+    },
+    {
+        "Kana": "ぜんぶで",
+        "Kanji": "全部で",
+        "Phonetic": "{{全部,ぜんぶ}}で",
+        "Chinese": "一共，總共"
+    },
+    {
+        "Kana": "ゾウ",
+        "Kanji": "ゾウ",
+        "Phonetic": "ゾウ",
+        "Chinese": "大象"
+    },
+    {
+        "Kana": "そうじ",
+        "Kanji": "掃除",
+        "Phonetic": "{{掃除,そうじ}}",
+        "Chinese": "掃除"
+    },
+    {
+        "Kana": "そうじ（を）します",
+        "Kanji": "掃除（を）します",
+        "Phonetic": "{{掃除,そうじ}}（を）します",
+        "Chinese": "打掃"
+    },
+    {
+        "Kana": "そこ",
+        "Kanji": "そこ",
+        "Phonetic": "そこ",
+        "Chinese": "那兒，那裡"
+    },
+    {
+        "Kana": "そして",
+        "Kanji": "そして",
+        "Phonetic": "そして",
+        "Chinese": "而且，並且；然後"
+    },
+    {
+        "Kana": "そちら",
+        "Kanji": "そちら",
+        "Phonetic": "そちら",
+        "Chinese": ["① 你，您（指對方或聽話者）","② 你那邊，您那邊（指對方或聽話者所在的地方）"]
+    },
+    {
+        "Kana": "そっち",
+        "Kanji": "そっち",
+        "Phonetic": "そっち",
+        "Chinese": "那邊：「そちら」的非正式口語說法"
+    },
+    {
+        "Kana": "そと",
+        "Kanji": "外",
+        "Phonetic": "{{外,そと}}",
+        "Chinese": "外面，外邊"
+    },
+    {
+        "Kana": "その",
+        "Kanji": "その",
+        "Phonetic": "その",
+        "Chinese": "那，那個"
+    },
+    {
+        "Kana": "そば",
+        "Kanji": "そば",
+        "Phonetic": "そば",
+        "Chinese": "旁邊，附近"
+    },
+    {
+        "Kana": "そふ",
+        "Kanji": "祖父",
+        "Phonetic": "{{祖父,そふ}}",
+        "Chinese": "爺爺，外公：提及自己的爺爺或外公時用「祖父（そふ）」"
+    },
+    {
+        "Kana": "そぼ",
+        "Kanji": "祖母",
+        "Phonetic": "{{祖母,そぼ}}",
+        "Chinese": "奶奶，外婆：提及自己的奶奶或外婆時用「祖母（そぼ）」"
+    },
+    {
+        "Kana": "そら",
+        "Kanji": "空",
+        "Phonetic": "{{空,そら}}",
+        "Chinese": "天，天空"
+    },
+    {
+        "Kana": "それ",
+        "Kanji": "それ",
+        "Phonetic": "それ",
+        "Chinese": "那，那個（離聽話者近的東西）"
+    },
+    {
+        "Kana": "それから",
+        "Kanji": "それから",
+        "Phonetic": "それから",
+        "Chinese": "然後，接著；而且，還有"
+    },
+    {
+        "Kana": "それでは",
+        "Kanji": "それでは",
+        "Phonetic": "それでは",
+        "Chinese": "那麼"
+    },
+    {
+        "Kana": "だいがく",
+        "Kanji": "大学",
+        "Phonetic": "{{大学,だいがく}}",
+        "Chinese": "大學"
+    },
+    {
+        "Kana": "だいがく１ねんせい",
+        "Kanji": "大学１年生",
+        "Phonetic": "{{大学,だいがく}}１{{年生,ねんせい}}",
+        "Chinese": "大學１年級"
+    },
+    {
+        "Kana": "だいじょうぶ",
+        "Kanji": "大丈夫",
+        "Phonetic": "{{大丈夫,だいじょうぶ}}",
+        "Chinese": "沒問題"
+    },
+    {
+        "Kana": "だいすき",
+        "Kanji": "大好き",
+        "Phonetic": "{{大好,だいす}}き",
+        "Chinese": "非常喜歡，最喜歡"
+    },
+    {
+        "Kana": "たいせつ",
+        "Kanji": "大切",
+        "Phonetic": "{{大切,たいせつ}}",
+        "Chinese": "重要，寶貴；珍惜"
+    },
+    {
+        "Kana": "たいてい",
+        "Kanji": "大抵",
+        "Phonetic": "{{大抵,たいてい}}",
+        "Chinese": "基本上，大約，一般"
+    },
+    {
+        "Kana": "たいへん",
+        "Kanji": "大変",
+        "Phonetic": "{{大変,たいへん}}",
+        "Chinese": "很，非常；嚴重，不得了；辛苦，費勁"
+    },
+    {
+        "Kana": "たいわん",
+        "Kanji": "台湾",
+        "Phonetic": "{{台湾,たいわん}}",
+        "Chinese": "臺灣"
+    },
+    {
+        "Kana": "たかい",
+        "Kanji": "高い",
+        "Phonetic": "{{高,たか}}い",
+        "Chinese": ["① （個子）高","② （價格）貴"]
+    },
+    {
+        "Kana": "たくさん",
+        "Kanji": "たくさん",
+        "Phonetic": "たくさん",
+        "Chinese": "很多"
+    },
+    {
+        "Kana": "タクシー",
+        "Kanji": "タクシー",
+        "Phonetic": "タクシー",
+        "Chinese": "計程車"
+    },
+    {
+        "Kana": "～だけ",
+        "Kanji": "～だけ",
+        "Phonetic": "～だけ",
+        "Chinese": "只有，僅僅"
+    },
+    {
+        "Kana": "だします",
+        "Kanji": "出します",
+        "Phonetic": "{{出,だ}}します",
+        "Chinese": ["① 寄信","② 提交報告"]
+    },
+    {
+        "Kana": "ただしい",
+        "Kanji": "正しい",
+        "Phonetic": "{{正,ただ}}しい",
+        "Chinese": "對，對的，正確"
+    },
+    {
+        "Kana": "～たち",
+        "Kanji": "～たち",
+        "Phonetic": "～たち",
+        "Chinese": "～們"
+    },
+    {
+        "Kana": "たちます",
+        "Kanji": "立ちます",
+        "Phonetic": "{{立,た}}ちます",
+        "Chinese": "站，立"
+    },
+    {
+        "Kana": "たてもの",
+        "Kanji": "建物",
+        "Phonetic": "{{建物,たてもの}}",
+        "Chinese": "建築物，房屋"
+    },
+    {
+        "Kana": "たな",
+        "Kanji": "棚",
+        "Phonetic": "{{棚,たな}}",
+        "Chinese": "架子；櫃"
+    },
+    {
+        "Kana": "たのしい",
+        "Kanji": "楽しい",
+        "Phonetic": "{{楽,たの}}しい",
+        "Chinese": "高興，愉快"
+    },
+    {
+        "Kana": "たのしみ",
+        "Kanji": "楽しみ",
+        "Phonetic": "{{楽,たの}}しみ",
+        "Chinese": "興趣，樂趣；期望，期待"
+    },
+    {
+        "Kana": "たぶん",
+        "Kanji": "たぶん",
+        "Phonetic": "たぶん",
+        "Chinese": "也許，有可能，大概"
+    },
+    {
+        "Kana": "たべます",
+        "Kanji": "食べます",
+        "Phonetic": "{{食,た}}べます",
+        "Chinese": "吃"
+    },
+    {
+        "Kana": "たべもの",
+        "Kanji": "食べ物",
+        "Phonetic": "{{食,た}}べ{{物,もの}}",
+        "Chinese": "食物，吃的東西"
+    },
+    {
+        "Kana": "たまご",
+        "Kanji": "たまご",
+        "Phonetic": "たまご",
+        "Chinese": "雞蛋，蛋"
+    },
+    {
+        "Kana": "だめ",
+        "Kanji": "だめ",
+        "Phonetic": "だめ",
+        "Chinese": ["① 不好，壞的", "② 不可以，不准"]
+    },
+    {
+        "Kana": "だれ",
+        "Kanji": "だれ",
+        "Phonetic": "だれ",
+        "Chinese": "誰"
+    },
+    {
+        "Kana": "だれか",
+        "Kanji": "だれか",
+        "Phonetic": "だれか",
+        "Chinese": "某人，有人"
+    },
+    {
+        "Kana": "だれとも",
+        "Kanji": "だれとも",
+        "Phonetic": "だれとも",
+        "Chinese": "和任何人都～，和誰都～"
+    },
+    {
+        "Kana": "だれにも",
+        "Kanji": "だれにも",
+        "Phonetic": "だれにも",
+        "Chinese": "對任何人都～，對誰都"
+    },
+    {
+        "Kana": "だれも",
+        "Kanji": "だれも",
+        "Phonetic": "だれも",
+        "Chinese": "任何人都～，任誰都～"
+    },
+    {
+        "Kana": "たんじょうび",
+        "Kanji": "たんじょうび",
+        "Phonetic": "たんじょうび",
+        "Chinese": "生日"
+    },
+    {
+        "Kana": "ダンス",
+        "Kanji": "ダンス",
+        "Phonetic": "ダンス",
+        "Chinese": "舞蹈"
+    },
+    {
+        "Kana": "ちいさい",
+        "Kanji": "小さい",
+        "Phonetic": "{{小,ちい}}さい",
+        "Chinese": "小的"
+    },
+    {
+        "Kana": "チェックインします",
+        "Kanji": "チェックインします",
+        "Phonetic": "チェックインします",
+        "Chinese": "（飯店入住）登記；辦理（登機）手續"
+    },
+    {
+        "Kana": "ちかい",
+        "Kanji": "近い",
+        "Phonetic": "{{近,ちか}}い",
+        "Chinese": "近的"
+    },
+    {
+        "Kana": "ちがいます",
+        "Kanji": "ちがいます",
+        "Phonetic": "ちがいます",
+        "Chinese": "不對，不是，錯了"
+    },
+    {
+        "Kana": "ちかく",
+        "Kanji": "近く",
+        "Phonetic": "{{近,ちか}}く",
+        "Chinese": "附近"
+    },
+    {
+        "Kana": "ちかてつ",
+        "Kanji": "地下鉄",
+        "Phonetic": "{{地下鉄,ちかてつ}}",
+        "Chinese": "地鐵"
+    },
+    {
+        "Kana": "チケット",
+        "Kanji": "チケット",
+        "Phonetic": "チケット",
+        "Chinese": "票"
+    },
+    {
+        "Kana": "ちち",
+        "Kanji": "父",
+        "Phonetic": "{{父,ちち}}",
+        "Chinese": "家父，我父親：提及自己爸爸時用「父（ちち）」"
+    },
+    {
+        "Kana": "ちゅうごくご",
+        "Kanji": "中国語",
+        "Phonetic": "{{中国,ちゅうごく}}{{語,ご}}",
+        "Chinese": "中文，華語"
+    },
+    {
+        "Kana": "ちゅうごくじん",
+        "Kanji": "中国人",
+        "Phonetic": "{{中国,ちゅうごく}}{{人,じん}}",
+        "Chinese": "中國人，華人"
+    },
+    {
+        "Kana": "ちゅうもんします",
+        "Kanji": "注文します",
+        "Phonetic": "{{注文,ちゅうもん}}します",
+        "Chinese": "點菜；下訂單"
+    },
+    {
+        "Kana": "ちょうど",
+        "Kanji": "ちょうど",
+        "Phonetic": "ちょうど",
+        "Chinese": "正好，剛好"
+    },
+    {
+        "Kana": "ちょっと",
+        "Kanji": "ちょっと",
+        "Phonetic": "ちょっと",
+        "Chinese": "一點點，稍微：「少し」的非正式口語說"
+    },
+    {
+        "Kana": "つかいます",
+        "Kanji": "使います",
+        "Phonetic": "{{使,つか}}います",
+        "Chinese": "使用，用"
+    },
+    {
+        "Kana": "つかれます",
+        "Kanji": "疲れます",
+        "Phonetic": "{{疲,つか}}れます",
+        "Chinese": "累，疲憊"
+    },
+    {
+        "Kana": "つきます",
+        "Kanji": "着きます",
+        "Phonetic": "{{着,つ}}きます",
+        "Chinese": "到，抵達"
+    },
+    {
+        "Kana": "つくえ",
+        "Kanji": "机",
+        "Phonetic": "{{机,つく}}え",
+        "Chinese": "桌子，書桌"
+    },
+    {
+        "Kana": "つくります",
+        "Kanji": "作ります",
+        "Phonetic": "{{作,つく}}ります",
+        "Chinese": "製作，創作；建立"
+    },
+    {
+        "Kana": "（ストーブを）つけます",
+        "Kanji": "（ストーブを）つけます",
+        "Phonetic": "（ストーブを）つけます",
+        "Chinese": "開（暖爐）"
+    },
+    {
+        "Kana": "つま",
+        "Kanji": "妻",
+        "Phonetic": "{{妻,つま}}",
+        "Chinese": "內人，我太太：提及自己太太時用「妻（つま）」"
+    },
+    {
+        "Kana": "（のみものが）つめたい",
+        "Kanji": "（飲み物が）冷たい",
+        "Phonetic": "（{{飲,の}}み{{物,もの}}が）{{冷,つめ}}たい",
+        "Chinese": "（飲料）冰，涼"
+    },
+    {
+        "Kana": "て",
+        "Kanji": "手",
+        "Phonetic": "{{手,て}}",
+        "Chinese": "手"
+    },
+    {
+        "Kana": "T シャツ",
+        "Kanji": "ティーシャツ",
+        "Phonetic": "ティーシャツ",
+        "Chinese": "T 恤"
+    },
+    {
+        "Kana": "ディズニーランド",
+        "Kanji": "ディズニーランド",
+        "Phonetic": "ディズニーランド",
+        "Chinese": "迪士尼樂園"
+    },
+    {
+        "Kana": "テーブル",
+        "Kanji": "テーブル",
+        "Phonetic": "テーブル",
+        "Chinese": "桌子"
+    },
+    {
+        "Kana": "でかけます",
+        "Kanji": "出かけます",
+        "Phonetic": "{{出,で}}かけます",
+        "Chinese": "外出，出門，出去"
+    },
+    {
+        "Kana": "てがみ",
+        "Kanji": "手紙",
+        "Phonetic": "{{手,て}}がみ",
+        "Chinese": "信"
+    },
+    {
+        "Kana": "できます",
+        "Kanji": "できます",
+        "Phonetic": "できます",
+        "Chinese": "能，可以，可能"
+    },
+    {
+        "Kana": "（ちかてつが）できます",
+        "Kanji": "（地下鉄が）できます",
+        "Phonetic": "（{{地下鉄,ちかてつ}}が）できます",
+        "Chinese": "（地鐵）完工，完成"
+    },
+    {
+        "Kana": "テスト",
+        "Kanji": "テスト",
+        "Phonetic": "テスト",
+        "Chinese": "考試，測試"
+    },
+    {
+        "Kana": "てつだいます",
+        "Kanji": "手伝います",
+        "Phonetic": "{{手,て}}つだいます",
+        "Chinese": "幫助，幫忙"
+    },
+    {
+        "Kana": "テニス",
+        "Kanji": "テニス",
+        "Phonetic": "テニス",
+        "Chinese": "網球"
+    },
+    {
+        "Kana": "では（＝それでは）",
+        "Kanji": "では（＝それでは）",
+        "Phonetic": "では（＝それでは）",
+        "Chinese": "那麼"
+    },
+    {
+        "Kana": "デパート",
+        "Kanji": "デパート",
+        "Phonetic": "デパート",
+        "Chinese": "百貨商場"
+    },
+    {
+        "Kana": "（いえを）でます",
+        "Kanji": "（家を）出ます",
+        "Phonetic": "（{{家,いえ}}を）{{出,で}}ます",
+        "Chinese": "離開（家），出門"
+    },
+    {
+        "Kana": "（かいぎに／パーティーに）でます",
+        "Kanji": "（会議に／パーティーに）出ます",
+        "Phonetic": "（{{会議,かいぎ}}に／パーティーに）{{出,で}}ます",
+        "Chinese": "參加，（出席會議／派對）"
+    },
+    {
+        "Kana": "（だいがくを）でます",
+        "Kanji": "（大学を）出ます",
+        "Phonetic": "（{{大学,だいがく}}を）{{出,で}}ます",
+        "Chinese": "（大學）畢業"
+    },
+    {
+        "Kana": "でも",
+        "Kanji": "でも",
+        "Phonetic": "でも",
+        "Chinese": "不過，但是，可是"
+    },
+    {
+        "Kana": "テレビ",
+        "Kanji": "テレビ",
+        "Phonetic": "テレビ",
+        "Chinese": "電視"
+    },
+    {
+        "Kana": "てんき",
+        "Kanji": "天気",
+        "Phonetic": "{{天気,てんき}}",
+        "Chinese": "天氣"
+    },
+    {
+        "Kana": "てんきのひ",
+        "Kanji": "天気の日",
+        "Phonetic": "{{天気,てんき}}の{{日,ひ}}",
+        "Chinese": "好天氣的時候"
+    },
+    {
+        "Kana": "でんしじしょ",
+        "Kanji": "電子辞書",
+        "Phonetic": "{{電子辞書,でんしじしょ}}",
+        "Chinese": "電子辭典"
+    },
+    {
+        "Kana": "てんらんかい",
+        "Kanji": "てんらん会",
+        "Phonetic": "てんらん{{会,かい}}",
+        "Chinese": "展覽會"
+    },
+    {
+        "Kana": "でんわ",
+        "Kanji": "電話",
+        "Phonetic": "{{電話,でんわ}}",
+        "Chinese": "電話"
+    },
+    {
+        "Kana": "でんわ（を）します",
+        "Kanji": "電話（を）します",
+        "Phonetic": "{{電話,でんわ}}（を）します",
+        "Chinese": "打電話，通電話"
+    },
+    {
+        "Kana": "ど（＝どようび）",
+        "Kanji": "土（＝土曜日）",
+        "Phonetic": "{{土,ど}}（＝{{土曜日,どようび}}）",
+        "Chinese": "星期六，週六"
+    },
+    {
+        "Kana": "ドア",
+        "Kanji": "ドア",
+        "Phonetic": "ドア",
+        "Chinese": "門"
+    },
+    {
+        "Kana": "どう",
+        "Kanji": "どう",
+        "Phonetic": "どう",
+        "Chinese": "如何，怎麼樣"
+    },
+    {
+        "Kana": "どうして",
+        "Kanji": "どうして",
+        "Phonetic": "どうして",
+        "Chinese": "為什麼"
+    },
+    {
+        "Kana": "どうぶつ",
+        "Kanji": "動物",
+        "Phonetic": "{{動物,どうぶつ}}",
+        "Chinese": "動物"
+    },
+    {
+        "Kana": "どうぶつえん",
+        "Kanji": "動物園",
+        "Phonetic": "{{動物園,どうぶつえん}}",
+        "Chinese": "動物園"
+    },
+    {
+        "Kana": "どうやって",
+        "Kanji": "どうやって",
+        "Phonetic": "どうやって",
+        "Chinese": "如何（做），怎麼（做）"
+    },
+    {
+        "Kana": "ときどき",
+        "Kanji": "ときどき",
+        "Phonetic": "ときどき",
+        "Chinese": "有時，有時候"
+    },
+    {
+        "Kana": "とけい",
+        "Kanji": "時計",
+        "Phonetic": "{{時計,とけい}}",
+        "Chinese": "鐘，錶"
+    },
+    {
+        "Kana": "どこ",
+        "Kanji": "どこ",
+        "Phonetic": "どこ",
+        "Chinese": "哪兒，哪裡"
+    },
+    {
+        "Kana": "どこ（へ）も",
+        "Kanji": "どこ（へ）も",
+        "Phonetic": "どこ（へ）も",
+        "Chinese": "任何地方都～，哪裡都"
+    },
+    {
+        "Kana": "どこか",
+        "Kanji": "どこか",
+        "Phonetic": "どこか",
+        "Chinese": "某處，有的地方"
+    },
+    {
+        "Kana": "ところ",
+        "Kanji": "ところ",
+        "Phonetic": "ところ",
+        "Chinese": "地方，地點"
+    },
+    {
+        "Kana": "としょかん",
+        "Kanji": "図書館",
+        "Phonetic": "{{図書館,としょかん}}",
+        "Chinese": "圖書館"
+    },
+    {
+        "Kana": "としょしつ",
+        "Kanji": "図書室",
+        "Phonetic": "{{図書室,としょしつ}}",
+        "Chinese": "圖書室"
+    },
+    {
+        "Kana": "どちら",
+        "Kanji": "どちら",
+        "Phonetic": "どちら",
+        "Chinese": "哪個；哪邊；哪位"
+    },
+    {
+        "Kana": "どっち",
+        "Kanji": "どっち",
+        "Phonetic": "どっち",
+        "Chinese": "哪個；哪邊：「どちら」的非正式口語說法"
+    },
+    {
+        "Kana": "とても",
+        "Kanji": "とても",
+        "Phonetic": "とても",
+        "Chinese": "非常，很"
+    }
+]

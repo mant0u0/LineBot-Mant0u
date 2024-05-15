@@ -1,0 +1,106 @@
+[
+    {
+        "title": "饅頭機器人指令說明",
+        "illustrate": "工具類型",
+        "options": [
+            {
+                "labelText": "饅頭聊天功能",
+                "actionText": "饅頭"
+            },
+            {
+                "labelText": "搜尋功能",
+                "actionText": "搜尋"
+            },
+            {
+                "labelText": "翻譯功能",
+                "actionText": "翻譯"
+            },
+            {
+                "labelText": "Twitter 圖片/影片擷取",
+                "actionText": "Twitter"
+            },
+            {
+                "labelText": "貨幣換算",
+                "actionText": "貨幣換算"
+            }
+        ]
+    },
+    {
+        "title": "饅頭機器人指令說明",
+        "illustrate": "遊戲類型",
+        "options": [
+            {
+                "labelText": "海盜桶",
+                "actionText": "海盜桶"
+            },
+            {
+                "labelText": "一番賞",
+                "actionText": "一番賞"
+            },
+            {
+                "labelText": "扭蛋機",
+                "actionText": "扭蛋機"
+            },
+            {
+                "labelText": "猜拳",
+                "actionText": "猜拳"
+            },
+            {
+                "labelText": "手槍",
+                "actionText": "手槍"
+            }
+        ]
+    },
+    {
+        "title": "饅頭機器人指令說明",
+        "illustrate": "隨機工具類型 ①",
+        "options": [
+            {
+                "labelText": "亂數",
+                "actionText": "亂數"
+            },
+            {
+                "labelText": "硬幣",
+                "actionText": "硬幣"
+            },
+            {
+                "labelText": "拉霸",
+                "actionText": "拉霸"
+            },
+            {
+                "labelText": "擲筊",
+                "actionText": "擲筊"
+            },
+            {
+                "labelText": "骰子",
+                "actionText": "骰子"
+            }
+        ]
+    },
+    {
+        "title": "饅頭機器人指令說明",
+        "illustrate": "隨機工具類型 ②",
+        "options": [
+            {
+                "labelText": "抽籤",
+                "actionText": "抽籤"
+            },
+            {
+                "labelText": "是不是、要不要、有沒有",
+                "actionText": "是不是、要不要、有沒有"
+            },
+            {
+                "labelText": "哪個",
+                "actionText": "哪個"
+            },
+            {
+                "labelText": "抽牌",
+                "actionText": "抽牌"
+            },
+            {
+                "labelText": "塔羅牌",
+                "actionText": "塔羅牌"
+            }
+        ]
+    }
+]

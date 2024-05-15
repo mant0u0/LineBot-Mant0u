@@ -1,0 +1,29 @@
+{
+    "banner_url": "banner/mant0u.png",
+    "text_color": "#10496d",
+    "quick_reply": [],
+    "text_content": [
+        [
+            {
+                "type": "h1",
+                "text": "翻譯"
+            },
+            {
+                "type": "h2",
+                "text": "使用說明"
+            },
+            {
+                "type": "p",
+                "text": "提供簡易的翻譯功能，目前可翻譯「中文, 英文, 日文, 韓文, 注音」語言。（此翻譯使用 Google 翻譯，中文與注音使用 繁化姬 - 繁簡轉換、台灣化 API 轉換）"
+            },
+            {
+                "type": "h2",
+                "text": "指令"
+            },
+            {
+                "type": "p",
+                "text": "{{翻譯：TEXT}}：將文字進行翻譯，冒號請使用全形輸入。"
+            }
+        ]
+    ]
+}

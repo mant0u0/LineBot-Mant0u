@@ -1,0 +1,21 @@
+{
+    "banner_url": "banner/mant0u.png",
+    "text_color": "#10496d",
+    "quick_reply": [],
+    "text_content": [
+        [
+            {
+                "type": "h1",
+                "text": "Twitter 圖片/影片擷取"
+            },
+            {
+                "type": "h2",
+                "text": "使用說明"
+            },
+            {
+                "type": "p",
+                "text": "{{直接貼上 Twitter 的貼文連結}}，機器人會直接將貼文所附的圖片或是影片，直接顯示出來！"
+            }
+        ]
+    ]
+}
