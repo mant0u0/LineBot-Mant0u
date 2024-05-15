@@ -167,7 +167,7 @@
 
 ## 特別感謝
 
-特別感謝 [GDG Kaohsiung](https://gdg.community.dev/gdg-kaohsiung/) 社群與主辦人 Andy。在每月第二個禮拜二晚上七點於高雄舉辦的 TOOCON 軟體交流聚會，感謝給我機會於 TOOCON#12 上台分享這個專案，順便附上當天的簡報～
+特別感謝 [GDG Kaohsiung](https://gdg.community.dev/gdg-kaohsiung/) 社群與主辦人 Andy。在每月第二個禮拜二晚上七點於高雄舉辦的 TOOCON 軟體交流聚會，感謝給我機會於 TOOCON#12 上台分享這個專案，順便附上當天的簡報～ ٩( 'ω' )و
 
 - 感謝 GDG Kaohsiung 社群
 
