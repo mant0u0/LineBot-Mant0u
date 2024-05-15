@@ -163,7 +163,7 @@
 
 - 若改寫此專案，請勿再使用「Mant0u Bot、饅頭機器人」等名稱稱呼相關程式或服務，避免造成混淆。
 
-- 如有引用此專案，請註明此專案連結（https://github.com/mant0u0/LineBot-Mant0u），感謝配合。
+- 如有引用此專案，請註明此專案連結（ https://github.com/mant0u0/LineBot-Mant0u ），感謝配合。
 
 ## 特別感謝
 
