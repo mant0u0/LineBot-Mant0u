@@ -323,9 +323,11 @@ def handle_message(event):
             if checkYesOrNo(userMessage): 
                 YesNo_text_message = randomYesOrNoMainReturn(userMessage)
                 reply_message_line.append(YesNo_text_message)
-            # AI 回覆
-            ai_text_message = aiMant0uText(userMessage)
-            reply_message_line.append(ai_text_message)
+            
+            # 個人對話時，不需要額外指令，直接觸發 AI 回覆 (private model 才有)
+            if mant0u_bot_model == "private":
+                ai_text_message = aiMant0uText(userMessage)
+                reply_message_line.append(ai_text_message)
             
             line_bot_api.reply_message(event.reply_token, reply_message_line)
         else:

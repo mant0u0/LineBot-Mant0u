@@ -1,4 +1,4 @@
-from apps.ai.openai import openai
+# from apps.ai.openai import openai
 from apps.ai.gemini import gemini, geminiVision, geminiPrompt
 
 from apps.common.zhconvert import zhconvert
