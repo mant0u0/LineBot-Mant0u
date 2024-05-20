@@ -67,14 +67,19 @@ mant0u_bot_model = os.getenv("MANT0U_BOT_MODEL")
 app = Flask(__name__)
 
 # domain root
+
+
 @app.route('/')
 def home():
     return 'Hello, World!'
 
 # 忽略對 favicon.ico 的請求（避免 favicon.ico 的 404 錯誤 ）
+
+
 @app.route("/favicon.ico")
 def favicon():
     return url_for('static', filename='data:,')
+
 
 @app.route("/webhook", methods=['POST'])
 def callback():
@@ -89,6 +94,7 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
+
 
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -118,7 +124,7 @@ def handle_message(event):
             removeJsonExample(event)
             return
         if userMessage == '目錄圖片連結':
-            text_message = TextSendMessage(text= localImg("mant0u.jpg") )
+            text_message = TextSendMessage(text=localImg("mant0u.jpg"))
             line_bot_api.reply_message(event.reply_token, text_message)
             return
         if userMessage == 'ID':
@@ -130,7 +136,7 @@ def handle_message(event):
         if userMessage == '快速回覆':
             quickReplyExample(event)
             return
-    
+
     # =============================== #
     if userMessage == '饅頭' or userMessage == '功能列表' or userMessage == '指令說明' or userMessage == '說明':
         menuMain(event)
@@ -139,26 +145,26 @@ def handle_message(event):
         command_text = userMessage[1:]
         menu_list = [
             # ['指令名稱','JSON 檔名'],
-            ['饅頭','mant0u'],                              #
-            ['搜尋','search'],                              #
-            ['翻譯','translate'],                           #
-            ['Twitter','twitter'],                          #
-            ['貨幣換算','currency'],                        #
-            ['海盜桶','gamePopUpPirate'],                   #
-            ['一番賞','gameIchiban'],                       #
-            ['扭蛋機','randomGashapon'],                    #
-            ['猜拳','gameRPS'],                             #
-            ['手槍','gameGun'],                             #
-            ['亂數','randomNumber'],                        #
-            ['硬幣','randomCoin'],                          #
-            ['拉霸','randomSlot'],                          #
-            ['擲筊','randomBwaBwei'],                       #
-            ['骰子','randomDice'],                          #
-            ['抽籤','randomOkamikuji'],                     #
-            ['是不是、要不要、有沒有','randomYesOrNo'],     #
-            ['哪個','randomWhichOne'],                      #
-            ['抽牌','randomPoker'],                         #
-            ['塔羅牌','randomTarotCards'],                  #
+            ['饅頭', 'mant0u'],                              #
+            ['搜尋', 'search'],                              #
+            ['翻譯', 'translate'],                           #
+            ['Twitter', 'twitter'],                          #
+            ['貨幣換算', 'currency'],                        #
+            ['海盜桶', 'gamePopUpPirate'],                   #
+            ['一番賞', 'gameIchiban'],                       #
+            ['扭蛋機', 'randomGashapon'],                    #
+            ['猜拳', 'gameRPS'],                             #
+            ['手槍', 'gameGun'],                             #
+            ['亂數', 'randomNumber'],                        #
+            ['硬幣', 'randomCoin'],                          #
+            ['拉霸', 'randomSlot'],                          #
+            ['擲筊', 'randomBwaBwei'],                       #
+            ['骰子', 'randomDice'],                          #
+            ['抽籤', 'randomOkamikuji'],                     #
+            ['是不是、要不要、有沒有', 'randomYesOrNo'],     #
+            ['哪個', 'randomWhichOne'],                      #
+            ['抽牌', 'randomPoker'],                         #
+            ['塔羅牌', 'randomTarotCards'],                  #
         ]
         for item in menu_list:
             if command_text == item[0]:
@@ -172,7 +178,7 @@ def handle_message(event):
             aiMain(event, userMessage)
         else:
             aiMant0u(event, userMessage)
-    elif userMessage.find('圖：') == 0 or userMessage.find('圖:') == 0 :
+    elif userMessage.find('圖：') == 0 or userMessage.find('圖:') == 0:
         aiVision(event, userMessage)
 
     elif userMessage.find('https://vxtwitter.com/') == 0 or userMessage.find('https://fxtwitter.com/') == 0 or userMessage.find('https://twitter.com/') == 0 or userMessage.find('https://x.com/') == 0:
@@ -180,7 +186,7 @@ def handle_message(event):
     elif userMessage.find('https://www.instagram.com/') == 0:
         instaNew(event, userMessage)
 
-    elif userMessage == '扭蛋機' or userMessage == '扭蛋' :
+    elif userMessage == '扭蛋機' or userMessage == '扭蛋':
         randomGashaponPlay(event)
     elif userMessage.find('扭蛋新增：') == 0 or userMessage.find('扭蛋重置新增') == 0:
         randomGashaponAdd(event, userMessage)
@@ -202,7 +208,7 @@ def handle_message(event):
     elif userMessage.find('海盜桶：') == 0:
         gamePopUpPiratePlay(event, userMessage)
 
-    elif userMessage == '猜拳' :
+    elif userMessage == '猜拳':
         gameRPSMain(event)
     elif userMessage.find('手槍') == 0:
         gameGunSet(event, userMessage)
@@ -258,8 +264,8 @@ def handle_message(event):
     elif userMessage.find('電影！') == 0:
         searchWebMovie(event)
     elif userMessage == '找圖！':
-        imageUrl = upload_img_to_imgbb(event) # 取得圖片網址
-        searchWebImg(event, imageUrl) # 以圖搜尋
+        imageUrl = upload_img_to_imgbb(event)  # 取得圖片網址
+        searchWebImg(event, imageUrl)  # 以圖搜尋
 
     elif userMessage.find('地圖：') == 0:
         searchMap(event, userMessage)
@@ -283,7 +289,7 @@ def handle_message(event):
         calculator(event, userMessage)
 
     # 字串中含有連結
-    elif len(extract_url(userMessage)) > 0 and event.source.type == 'user' : 
+    elif len(extract_url(userMessage)) > 0 and event.source.type == 'user':
 
         # 包裝訊息、發送訊息
         text_message = TextSendMessage(
@@ -291,26 +297,28 @@ def handle_message(event):
             quick_reply=QuickReply(
                 items=[
                     QuickReplyButton(
-                        action=PostbackAction(label="擷取連結", data="擷取連結："+ userMessage)
+                        action=PostbackAction(
+                            label="擷取連結", data="擷取連結：" + userMessage)
                     ),
                     QuickReplyButton(
-                        action=PostbackAction(label="擷取並移除參數", data="擷取並移除參數："+ userMessage)
+                        action=PostbackAction(
+                            label="擷取並移除參數", data="擷取並移除參數：" + userMessage)
                     ),
                     QuickReplyButton(
-                        action=PostbackAction(label="縮短網址", data="縮短網址："+ userMessage)
+                        action=PostbackAction(
+                            label="縮短網址", data="縮短網址：" + userMessage)
                     ),
                 ]
             )
         )
         line_bot_api.reply_message(event.reply_token, text_message)
 
-
     # 貨幣換算
     elif extract_currency_conversion(userMessage)['state'] == 'success':
         currencyMain(event, userMessage)
 
     else:
-        # 紀錄群組/個人前一則訊息 
+        # 紀錄群組/個人前一則訊息
         recordTextMessage(event, userMessage)
 
         # 檢查扭蛋機新增狀態是否被開啟
@@ -319,26 +327,26 @@ def handle_message(event):
         # 判斷是不是在個人/群組
         if event.source.type == 'user':
             reply_message_line = []
-            #「是不是、好不好、對不對、有沒有」句型
-            if checkYesOrNo(userMessage): 
+            # 「是不是、好不好、對不對、有沒有」句型
+            if checkYesOrNo(userMessage):
                 YesNo_text_message = randomYesOrNoMainReturn(userMessage)
                 reply_message_line.append(YesNo_text_message)
-            
+
             # 個人對話時，不需要額外指令，直接觸發 AI 回覆 (private model 才有)
             if mant0u_bot_model == "private":
                 ai_text_message = aiMant0uText(userMessage)
                 reply_message_line.append(ai_text_message)
-            
+
             line_bot_api.reply_message(event.reply_token, reply_message_line)
         else:
-            #「是不是、好不好、對不對、有沒有」句型
-            if checkYesOrNo(userMessage): 
+            # 「是不是、好不好、對不對、有沒有」句型
+            if checkYesOrNo(userMessage):
                 randomYesOrNoMain(event, userMessage)
 
 
 @line_handler.add(PostbackEvent)
 def handle_postback(event):
-    
+
     # 取得「使用者」postback
     userPostback = event.postback.data
 
@@ -368,14 +376,12 @@ def handle_postback(event):
 
     if userPostback.find('擷取連結：') == 0:
         url_list = extract_url(userPostback)
-        
+
         # 輸出字串
-        url_text = "\n\n".join( url_list )
-        
+        url_text = "\n\n".join(url_list)
+
         # 包裝訊息、發送訊息
-        text_message = TextSendMessage(text= url_text )
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return
+        text_message = TextSendMessage(text=url_text)
 
     if userPostback.find('擷取並移除參數：') == 0:
         url_list = extract_url(userPostback)
@@ -385,12 +391,10 @@ def handle_postback(event):
         for url in url_list:
             url_clean = url.split('?')[0]
             url_clean_list.append(url_clean)
-        url_clean_text = "\n".join( url_clean_list )
-        
+        url_clean_text = "\n".join(url_clean_list)
+
         # 包裝訊息、發送訊息
-        text_message = TextSendMessage(text= url_clean_text )
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return
+        text_message = TextSendMessage(text=url_clean_text)
 
     if userPostback.find('縮短網址：') == 0:
         url_list = extract_url(userPostback)
@@ -411,24 +415,23 @@ def handle_postback(event):
                 url_short_list.append(short_url)
 
         # 輸出字串
-        url_text = "\n\n".join( url_short_list )
+        url_text = "\n\n".join(url_short_list)
 
         # 包裝訊息、發送訊息
-        text_message = TextSendMessage(text= url_text )
-        line_bot_api.reply_message(event.reply_token, text_message)
-        return
-
+        text_message = TextSendMessage(text=url_text)
+    line_bot_api.reply_message(event.reply_token, text_message)
+    return
 
 
 @line_handler.add(MessageEvent, message=ImageMessage)
 def handle_message_Image(event):
-    
+
     # 取得使用者傳送的圖片訊息
     message_id = event.message.id
     message_content = line_bot_api.get_message_content(message_id)
 
     # 取得訊息來源 ID
-    source_id = getMessageSourceID(event)   
+    source_id = getMessageSourceID(event)
 
     # 將圖片儲存到本地端
     with open(f"/tmp/{source_id}.jpg", "wb") as f:
@@ -437,7 +440,5 @@ def handle_message_Image(event):
     print("圖片訊息")
 
 
-
 if __name__ == "__main__":
     app.run()
-

@@ -3,10 +3,6 @@ from linebot import LineBotApi
 from linebot.models import *
 
 import os
-import random
-import re
-import requests
-from difflib import SequenceMatcher
 
 from apps.common.common import *
 
