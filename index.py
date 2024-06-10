@@ -34,7 +34,7 @@ from apps.gameRPS.main import gameRPSMain, gameRPSPlay
 from apps.randomGashapon.main import *
 from apps.randomGashapon.ai import randomGashaponAi
 
-from apps.currency.main import currencyMain, currencyControlMenu, currencyDiscount, currencyMultiple, currencyDivide, extract_currency_conversion
+from apps.currency.main import currencyMain, currencyControlMenu, currencyDiscount, currencyMultiple, currencyDivide, currencyTax, extract_currency_conversion
 
 from apps.translate.main import translateMain, translatePostback
 
@@ -57,7 +57,6 @@ from apps.japanese.wordCards import japaneseWordCards, japaneseVoice
 from apps.otherTools.calculator import calculator
 from apps.calendar.main import calendarMain
 
-from apps.readGoogleSheetsCsv.keywordReply import keywordReply, keywordSet
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
@@ -352,6 +351,9 @@ def handle_postback(event):
         currencyMultiple(event, userPostback)
     if userPostback.find('貨幣平分：') == 0:
         currencyDivide(event, userPostback)
+    if userPostback.find('貨幣退稅：') == 0:
+        currencyTax(event, userPostback)
+
 
     if userPostback.find('扭蛋選擇：') == 0:
         randomGashaponSelect(event, userPostback)

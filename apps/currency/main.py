@@ -114,7 +114,7 @@ def currencyDiscount(event, userPostback):
     # 整理文字
     userPostback = userPostback.replace('貨幣打折：', '')
     discount_info = userPostback.split("、")
-    # ['折數(0.9, 0.85...)','數值1','貨幣1','數值2','貨幣2','特例文字']
+    # ['折數(0.9, 0.85...)','數值1','貨幣1','數值2','貨幣2']
 
     discount = float(discount_info[0])
 
@@ -133,9 +133,6 @@ def currencyDiscount(event, userPostback):
     # 折扣文字
     discount_text = str( discount * 100 ).replace("0.0","").replace(".0","")
     discount_text = "打 "+ discount_text + " 折"
-    if len(discount_info) == 6:
-        discount_text = discount_info[5]
-
 
     # 整理資料
     currency_data = {
@@ -161,7 +158,6 @@ def currencyDiscount(event, userPostback):
     }
 
     flexMessage_reply(event, currency_data)
-
 
 # 倍數
 def currencyMultiple(event, userPostback):
@@ -244,6 +240,58 @@ def currencyDivide(event, userPostback):
     }
 
     flexMessage_reply(event, currency_data)
+
+# 退稅
+def currencyTax(event, userPostback):
+
+    # 整理文字
+    userPostback = userPostback.replace('貨幣退稅：', '')
+    
+    tax_info = userPostback.split("、")
+    # ['折數(0.9, 0.85...)', '數值1', '貨幣1', '數值2', '貨幣2']
+
+    tax = float(tax_info[0]) * 0.01 + 1
+
+    # 取得退稅數值、取得相差值
+    currency_original_tax = float(tax_info[1]) / tax
+    currency_convert_tax = float(tax_info[3]) / tax
+    currency_original_difference = float(tax_info[1]) - float(currency_original_tax)
+    currency_convert_difference = float(tax_info[3]) - float(currency_convert_tax)
+    
+    # 數字轉換小數點後兩位，有千分位逗號的字串
+    currency_original_tax = "{:,.2f}".format(float(currency_original_tax))
+    currency_convert_tax = "{:,.2f}".format(float(currency_convert_tax))
+    currency_original_difference = "{:,.2f}".format(float(currency_original_difference))
+    currency_convert_difference = "{:,.2f}".format(float(currency_convert_difference))
+
+    # 退稅文字
+    tax_text = "退稅 "+ tax_info[0] + "%"
+
+    # 整理資料
+    currency_data = {
+        "model": "tax",
+
+        "original":{
+            "value_float" : float(tax_info[1]),
+            "value_str" : "{:,.2f}".format(float(tax_info[1])),
+            "type": tax_info[2],
+            "ratio" : tax_text,
+            "tax": currency_original_tax,
+            "difference" : currency_original_difference,
+        },
+        "convert" :{
+            "value_float" : float(tax_info[3]),
+            "value_str" : "{:,.2f}".format(float(tax_info[3])),
+            "type": tax_info[4],
+            "ratio" : tax_text,
+            "tax": currency_convert_tax,
+            "difference" : currency_convert_difference,
+        },
+
+    }
+
+    flexMessage_reply(event, currency_data)
+
 
 # 控制選單
 def currencyControlMenu(event, userPostback):
@@ -967,6 +1015,134 @@ def pageTemplate_currency( data, model ):
         }
 
         return currency_info, currency_num
+    
+    elif model == "tax":
+        # 貨幣數值（整數與小數部分）
+        currency_tax = data["tax"]
+        currency_tax_int = currency_tax.split('.')[0]
+        currency_tax_dec = "." + currency_tax.split('.')[1]
+
+        # 貨幣資訊
+        currency_info = {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+                
+                # 貨幣類型 (中文)
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                        "type": "text",
+                        "text": currency_dict[data["type"]]["name"],
+                        "color": "#0A553A",
+                        "weight": "bold",
+                        "size": "sm"
+                        }
+                    ],
+                    "flex": 0
+                },
+
+                # 有打折
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                        "type": "text",
+                        "color": "#0A553A",
+                        "weight": "bold",
+                        "size": "sm",
+                        "contents": [
+                            {
+                            "type": "span",
+                            "text": data["value_str"],
+                            "decoration": "line-through",
+                            "color": "#0A553A99"
+                            },
+                            {
+                            "type": "span",
+                            "text": " · "
+                            },
+                            {
+                            "type": "span",
+                            "text": data["ratio"],
+                            }
+                        ]
+                        }
+                    ],
+                    "alignItems": "flex-end"
+                }
+            ],
+            "paddingBottom": "4px",
+            "paddingTop": "4px"
+        }
+        
+        # 貨幣數值
+        currency_num = {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+                # 貨幣數值
+                {
+                    "type": "text",
+                    "text": currency_tax_int,
+                    "color": "#0A553A",
+                    "weight": "bold",
+                    "align": "end",
+                    "size": "xl"
+                },
+                # 貨幣數值（小數）
+                {
+                    "type": "text",
+                    "text": currency_tax_dec,
+                    "color": "#0A553A99",
+                    "weight": "bold",
+                    "align": "end",
+                    "size": "md",
+                    "flex": 0,
+                },
+                # 貨幣類型
+                {
+                    "type": "text",
+                    "text": data["type"],
+                    "color": "#0A553A",
+                    "weight": "bold",
+                    "align": "end",
+                    "size": "md",
+                    "flex": 0,
+                    "margin": "8px"
+                }
+            ],
+            "backgroundColor": "#F3F3F3",
+            "paddingAll": "12px",
+            "cornerRadius": "12px",
+            "paddingBottom": "4px",
+            "paddingTop": "8px"
+        }
+        
+        # 貨幣相差統計
+        currency_diff = {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+                {
+                "type": "text",
+                "text": f"退稅 {data['difference']} 元！",
+                "color": "#0A553A88",
+                "size": "sm",
+                "weight": "bold",
+                "align": "center"
+                }
+            ],
+            "paddingTop": "6px"
+        }
+
+        return currency_info, currency_num, currency_diff
+
+
+
 
 # 包裝訊息，發送訊息
 def flexMessage_reply(event, currency_data):
@@ -979,10 +1155,13 @@ def flexMessage_reply(event, currency_data):
                 image_url= localImg('currency/icon-percent.png'),
                 action=PostbackAction(
                 label = "退稅 10%", 
-                data = f"貨幣打折：0.9、{quickReplyText}、退稅 10%"
+                data = f"貨幣退稅：10、{quickReplyText}"
             )
         )
         quickReply_list.append( quickReply_item ) 
+
+
+
 
     quickReply_item = QuickReplyButton(
                         image_url= localImg('currency/icon-percent.png'),
