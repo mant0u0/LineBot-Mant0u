@@ -43,6 +43,10 @@ def searchWeb(event, userMessage):
             {
                 "labelText": "Wikipedia",
                 "url": "https://zh.wikipedia.org/wiki/" + keyword
+            },
+            {
+                "labelText": "Chatgpt",
+                "url": "https://chatgpt.com/?hints=search&q=" + keyword
             }
         ],
         "alt_text":"搜尋結果！",

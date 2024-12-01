@@ -40,6 +40,7 @@ from apps.translate.main import translateMain, translatePostback
 
 from apps.randomDice.main import randomDiceMain
 from apps.randomCoin.main import randomCoinMain
+from apps.randomCoin.advanced import randomCoinAdvanced
 from apps.randomNumber.main import randomNumberMain
 from apps.randomSlot.main import randomSlotMain
 from apps.randomPoker.main import randomPokerMain
@@ -211,6 +212,8 @@ def handle_message(event):
         randomDiceMain(event, userMessage)
     elif userMessage == '硬幣':
         randomCoinMain(event)
+    elif userMessage.find('硬幣：') == 0:
+        randomCoinAdvanced(event, userMessage)
     elif userMessage.find('亂數') == 0:
         randomNumberMain(event, userMessage)
     elif userMessage == '拉霸' or userMessage == 'SLOT':
@@ -322,13 +325,7 @@ def handle_message(event):
             if checkYesOrNo(userMessage): 
                 YesNo_text_message = randomYesOrNoMainReturn(userMessage)
                 reply_message_line.append(YesNo_text_message)
-            
-            # 個人對話時，不需要額外指令，直接觸發 AI 回覆 (private model 才有)
-            if mant0u_bot_model == "private":
-                ai_text_message = aiMant0uText(userMessage)
-                reply_message_line.append(ai_text_message)
-            
-            line_bot_api.reply_message(event.reply_token, reply_message_line)
+                line_bot_api.reply_message(event.reply_token, reply_message_line)
         else:
             #「是不是、好不好、對不對、有沒有」句型
             if checkYesOrNo(userMessage): 
