@@ -51,7 +51,7 @@ def randomCoinAdvanced(event, userMessage):
 			# 結果文字
 			resultText = f"連續擲出 {str(headCount)} 次正面" 
 			if headCount == 0:
-				resultText = f"但沒有擲出半個正面..."
+				resultText = f"沒有擲出半個正面..."
 
 			# 正面
 			firstPageContents = [
@@ -109,7 +109,7 @@ def randomCoinAdvanced(event, userMessage):
 			# 結果文字
 			resultText = f"連續擲出 {str(tailsCount)} 次反面"
 			if tailsCount == 0:
-				resultText = f"但沒有擲出半個反面..."
+				resultText = f"沒有擲出半個反面..."
 
 			# 反面
 			firstPageContents = [
