@@ -422,7 +422,7 @@ def extract_currency_conversion(text):
 
     
     # 判斷是否有符合執行條件
-    if len(result_currency) != 0 and int(result_num) > 0:
+    if len(result_currency) != 0 and float(result_num) > 0:
 
         # 判斷第一個貨幣關鍵字，是不是在字串最前面（確保與數字在一起，才會執行程式）
         if result_currency_index[0] == 0:
@@ -481,7 +481,7 @@ def currency_conversion(currency):
             rates = float(data['data']['rates'][currency['convert']])
 
             # 進行貨幣換算
-            convert_value = int(currency['value_str']) * rates
+            convert_value = float(currency['value_str']) * rates
 
             # 回傳換算後的金額
             return str(convert_value)
