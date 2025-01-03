@@ -98,9 +98,9 @@ def handle_message(event):
 
     # 取得「使用者」訊息
     userMessage = event.message.text
+    print(userMessage)
 
     if mant0u_bot_model == "private":
-        # print(userMessage)
 
         if userMessage == '圖片':
             imageMessageExample(event)
