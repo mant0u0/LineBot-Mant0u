@@ -11,20 +11,20 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
 
 
-def randomPokerMain(event, userMessage):
+def random_poker_main(event, userMessage):
 
-    # 當輸入「抽牌」等同於「抽牌：1」
-    if userMessage == "抽牌":
-        userMessage = "抽牌：1"
+    # 當輸入「撲克牌」等同於「撲克牌：1」
+    if userMessage == "撲克牌":
+        userMessage = "撲克牌：1"
     
-    # 必須為「抽牌：num」才會觸發抽牌
-    if userMessage.find('抽牌：') == 0:
-        userMessage = userMessage.replace('抽牌：', '')
+    # 必須為「撲克牌：num」才會觸發撲克牌
+    if userMessage.find('撲克牌：') == 0:
+        userMessage = userMessage.replace('撲克牌：', '')
 
-        # 輸入抽牌數量
+        # 輸入撲克牌數量
         num = int(userMessage)
 
-        # 判斷抽牌數量 ( 1~54 張)
+        # 判斷撲克牌數量 ( 1~54 張)
         if num > 54:
             text_message = TextSendMessage(text="撲克牌不足，無法抽牌！")
             line_bot_api.reply_message(event.reply_token, text_message)
@@ -52,7 +52,7 @@ def randomPokerMain(event, userMessage):
         if len(draw_cards_name) < 6:
             result_text = ' '.join(draw_cards_name)
         else:
-            result_text = "抽牌結果！"
+            result_text = "撲克牌結果！"
 
 
         # 圖片ID：一頁最多顯示 8 張牌，將牌分成 8 張一頁 cards_page
@@ -76,9 +76,6 @@ def randomPokerMain(event, userMessage):
                 "aspectRatio": "1:1",
                 "gravity": "top"
             }
-
-            
-
 
             pageTemplate_contents.append(pageTemplate_BG)
 
@@ -145,7 +142,7 @@ def randomPokerMain(event, userMessage):
                     "action": {
                         "type": "message",
                         "label": "action",
-                        "text": "抽牌：" + str(userMessage),
+                        "text": "撲克牌：" + str(userMessage),
                     },
                 }
             }
@@ -155,7 +152,7 @@ def randomPokerMain(event, userMessage):
 
         # 包裝訊息
         flex_message = FlexSendMessage(
-            alt_text= '有人在抽牌！',
+            alt_text= '有人在抽撲克牌！',
             contents={
                 "type": "carousel",
                 "contents": flex_message_contents

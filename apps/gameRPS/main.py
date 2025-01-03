@@ -5,6 +5,7 @@ from linebot.models import *
 import os
 
 from apps.common.common import *
+from apps.common.database import *
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -57,7 +58,8 @@ def gameRPSPlay(event, userPostback):
     game_stage = 0
     try:
         # 讀取檔案
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
+
         if record_data["id"] != "":
             game_stage = 2
         else:
@@ -75,7 +77,8 @@ def gameRPSPlay(event, userPostback):
             "punch": punch,
         }
         # 寫入 JSON 檔案
-        write_json(file_path, source_id, record_data)
+        write_database_combined(file_path, source_id, record_data)
+        
 
         text_message = TextSendMessage(
             text= f"{userName} 準備好了！", 
@@ -128,7 +131,7 @@ def gameRPSPlay(event, userPostback):
                 game_text = f"{player_2['name']}  獲勝！"
 
         # 移除資料
-        remove_json(file_path, source_id)
+        remove_database_combined(file_path, source_id)
 
         flex_message_contents = []
         pageTemplate_r = pageTemplate_result(player_1, player_2, game_text)
@@ -169,7 +172,7 @@ def gameRPSRead(event):
     source_id = getMessageSourceID(event)   # 取得訊息來源 ID
     file_path = 'gameRPS'  # 選擇存取的檔案路徑
     
-    loaded_data = read_json(file_path, source_id)  # 讀取檔案
+    loaded_data = read_database_combined(file_path, source_id)  # 讀取檔案
 
     text_message = TextSendMessage(text= str(loaded_data) ) # 印出結果
     line_bot_api.reply_message(event.reply_token, text_message)

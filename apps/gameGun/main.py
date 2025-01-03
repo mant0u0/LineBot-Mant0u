@@ -6,6 +6,7 @@ import os
 import random
 
 from apps.common.common import *
+from apps.common.database import *
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -36,7 +37,7 @@ def gameGunSet(event, userMessage):
                 "now" : 0,
                 "model": "default"
             }
-            write_json(file_path, source_id, bullet_data)    # 寫入 JSON 檔案
+            write_database_combined(file_path, source_id, bullet_data)    # 寫入 JSON 檔案
 
             # 設定回應資料
             reply_data = {
@@ -62,7 +63,7 @@ def gameGunSet(event, userMessage):
                 "pr": num,
                 "model": "probability"
             }
-            write_json(file_path, source_id, bullet_data)    # 寫入 JSON 檔案
+            write_database_combined(file_path, source_id, bullet_data)    # 寫入 JSON 檔案
 
             # 設定回應資料
             reply_data = {
@@ -88,7 +89,7 @@ def gameGunPlay(event):
 
     try:
         # 讀取檔案
-        bullet_data = read_json(file_path, source_id)
+        bullet_data = read_database_combined(file_path, source_id)
         
         # 一般模式
         if bullet_data["model"] == "default":
@@ -104,7 +105,7 @@ def gameGunPlay(event):
                     "now" : bullet_now + 1,
                     "model": "default",
                 }
-                write_json(file_path, source_id, bullet_data) # 寫入 JSON 檔案
+                write_database_combined(file_path, source_id, bullet_data) # 寫入 JSON 檔案
 
                 # 設定回應資料
                 reply_data = {
@@ -130,7 +131,7 @@ def gameGunPlay(event):
                     "now" : 0,
                     "model": "default",
                 }
-                write_json(file_path, source_id, bullet_data) # 寫入 JSON 檔案
+                write_database_combined(file_path, source_id, bullet_data) # 寫入 JSON 檔案
                 
                 # 設定回應資料
                 reply_data = {
@@ -144,7 +145,7 @@ def gameGunPlay(event):
                 }
 
                 # 移除資料
-                remove_json(file_path, source_id)
+                remove_database_combined(file_path, source_id)
 
                 # 取得結果畫面、顯示畫面
                 pageTemplate = pageTemplate_result(reply_data)

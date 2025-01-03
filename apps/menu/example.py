@@ -401,7 +401,7 @@ def menuDetailExample(event):
                     action=MessageAction(label="問運勢", text="饅頭：今天運勢如何？")
                 ),
                 QuickReplyButton(
-                    action=MessageAction(label="更多指令 ➜", text="饅頭")
+                    action=MessageAction(label="更多指令 ➜", text="指令說明")
                 ),
             ]
         ),

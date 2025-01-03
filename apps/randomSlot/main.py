@@ -7,12 +7,14 @@ from linebot.models import *
 import os
 import random
 from apps.common.common import *
+from apps.randomSlot.template import *
+
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 
-def randomSlotMain(event):
+def random_slot_main(event):
     slot_layout = slot_reset_layout()  # 版面重置
     connected_elements = slot_check_connections(slot_layout)  # 檢查連線
 
@@ -24,28 +26,11 @@ def randomSlotMain(event):
             slot_layout, random.choice(slot_item))  # 強制連線函數
         connected_elements = slot_check_connections(slot_layout)  # 檢查連線
 
-    # 版面列印
-    slotContents = slot_contents_print(slot_layout, connected_elements)
-
     # flexMessage 容器
     flex_message_contents = []
 
     # flexMessage 一頁的內容
-    pageTemplate = {
-        "type": "bubble",
-        "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": slotContents,
-            "paddingAll": "0px",
-            "action": {
-                "type": "message",
-                "label": "action",
-                "text": "拉霸"
-            },
-        }
-    }
-
+    pageTemplate = random_slot_page_template(slot_layout, connected_elements)
 
     # 將內容放入 flex_message_contents 中
     flex_message_contents.append(pageTemplate)
@@ -63,88 +48,6 @@ def randomSlotMain(event):
 
 
 
-# slot 版面列印
-def slot_contents_print(slot_layout, connected_elements):
-    slotContents = []
-    # 背景
-    slotBg = {
-        "type": "image",
-        "url": localImg(f"randomSlot/bg/1.png"),
-        "size": "full",
-        "aspectMode": "cover",
-        "aspectRatio": "1:1",
-    }
-    slotContents.append(slotBg)
-
-    # 項目
-    for col in range(3):
-        for row in range(3):
-            slotItem = {
-                "type": "image",
-                "url": localImg("randomSlot/"+str(col)+str(row)+"/"+str(slot_layout[col][row])+".png"),
-                "size": "full",
-                "aspectMode": "cover",
-                "aspectRatio": "1:1",
-                "position": "absolute",
-            }
-            slotContents.append(slotItem)
-
-    # 文字
-    if len(connected_elements) == 0:
-        slotTextContents = [
-            {
-                "type": "text",
-                "text": " 沒有任何連線～",
-                "size": "lg",
-                "color": "#93563b",
-                "weight": "bold",
-                "flex": 0,
-            }
-        ]
-    else:
-        slotTextContents = [
-            {
-                "type": "icon",
-                "size": "xxl",
-                "url": localImg("randomSlot/icon/"+str(connected_elements[0])+".png"),
-                "offsetTop": "8px",
-            },
-            {
-                "type": "text",
-                "text": " 出現連線了！",
-                "size": "lg",
-                "color": "#93563b",
-                "weight": "bold",
-                "flex": 0,
-            }
-        ]
-    slotText = {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-            {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                    {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": slotTextContents,
-                        "justifyContent": "center",
-                    }
-                ],
-                "spacing": "xs"
-            }
-        ],
-        "position": "absolute",
-        "offsetBottom": "0px",
-        "offsetStart": "0px",
-        "offsetEnd": "0px",
-        "paddingAll": "20px"
-    }
-    slotContents.append(slotText)
-
-    return slotContents
 
 
 # slot 檢查連線

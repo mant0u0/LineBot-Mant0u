@@ -6,7 +6,9 @@ import json
 import unicodedata
 import re
 import os
+import random
 
+from apps.common.firebase import *
 
 # 上傳圖片 imgbb
 import imgbbpy
@@ -26,6 +28,17 @@ def localImg(path):
 
     return image_url
 
+# 取得專案中的 HTML 連結
+def localHtml(path):
+    
+    # 取得機器人網址
+    bot_url = request.url_root[:-1]
+    # 取得HTML路徑
+    html_path = 'html/' + path
+    # 取得HTML網址
+    html_url = bot_url + url_for('static', filename = html_path )
+
+    return html_url
 
 # 上傳圖片至 imgbb
 def upload_img_to_imgbb(event):
@@ -79,67 +92,73 @@ def getUserPhoto(event):
         user_pictureUrl = " "
     return user_pictureUrl
 
-# 讀取 JSON 檔案
-def read_json(path, id):
-    # 選擇存取的檔案路徑
-    path = "/tmp/"+path+".json"
 
-    try:
-        with open(path, 'r') as file:
-            data = json.load(file) # 讀取檔案
-        try:
-            loaded_data = data[id] # 使用 ID 作為 Key 來查詢
-            print("[成功] 讀取 JSON 成功")
-            return loaded_data
+# -------------------------------------------
+# 隨機生成句子
+def random_sentence():
 
-        except:
-            print("[錯誤] 無資料")
+    # 主詞表
+    subject_list = [
+        "我", "你", "他", "我們", "你們", "他們", "大家"
+    ]
 
-    except FileNotFoundError:
-        print("[錯誤] 找不到指定的檔案")
+    # 時間表
+    time_list = [
+        "早上", "中午", "下午", "晚上", "今天", "明天", "後天", "大後天", "下週", "下個月", "今年", "明年", "未來", "之後"
+    ]
 
-    except json.JSONDecodeError:
-        print("[錯誤] JSON 解碼失敗")
-    
-    return " "
+    # 名詞表
+    noun_list = [
+        "運勢", "健康", "工作", "樂透", "股票", "考試", 
+        "目標", "挑戰", "計畫", "會議", "行程", "家庭",
+        "旅行", "夢想", "機會", "時間", "學業", "快樂", 
+        "朋友", "天氣", "心情", "心願", "目標", "進度", 
+        "成果", "問題", "方法", "專案", "新開始", "改變",
+        "愛情", "友情", "關係", "健康"
+    ]
 
-# 寫入 JSON 檔案
-def write_json(path, id, data):
-    # 選擇存取的檔案路徑
-    path = "/tmp/"+path+".json"
 
-    try:
-        with open(path, 'r') as file:
-            existing_data = json.load(file)
-    except FileNotFoundError:
-        existing_data = {}
-    existing_data[id] = data
+    # 動詞表
+    verb_list = [
+        "去", "做", "參加", "完成", "開始", "結束", 
+        "學習", "嘗試", "忘記", "注意", "改進", "計劃", 
+        "期待", "整理", "準備", "分享", "探索", "追求", 
+        "研究", "修正", "克服", "檢討", "創造", "尋找", 
+        "分析", "提高", "協助", "檢查", "解決", "面對"
+    ]
 
-    with open(path, 'w') as file:
-        json.dump(existing_data, file, indent=4)
+    # 補語表
+    complement_list = [
+        "一下", "好嗎", "可能嗎", "吧", "試試看"
+    ]
 
-# 移除 JSON 資料
-def remove_json(path, id):
-    # 選擇存取的檔案路徑
-    path = "/tmp/"+path+".json"
+    # 句型結構
+    sentence_structures = [
+        "{subject}{time}的{noun}",
+        "{subject}的{noun}",
+        "{time}的運勢",
+        "{subject}{time}要不要{verb}{noun}{complement}",
+        "{subject}可不可以{verb}{noun}{complement}",
+        "{time}{subject}要不要{verb}{noun}",
+        "可以幫{subject}{verb}{noun}嗎",
+        "{subject}的{noun}怎麼樣",
+        "{subject}需要{verb}{noun}嗎"
+    ]
 
-    try:
-        with open(path, 'r') as file:
-            existing_data = json.load(file)
+    # 隨機選擇句型
+    structure = random.choice(sentence_structures)
 
-    except FileNotFoundError:
-        print("[錯誤] 找不到指定的檔案")
+    # 根據句型結構生成句子
+    sentence = structure.format(
+        subject=random.choice(subject_list),
+        time=random.choice(time_list),
+        noun=random.choice(noun_list),
+        verb=random.choice(verb_list),
+        complement=random.choice(complement_list)
+    )
+    return sentence
 
-    except json.JSONDecodeError:
-        print("[錯誤] JSON 解碼失敗")
-
-    try:
-        del existing_data[id]
-        with open(path, 'w') as file:
-            json.dump(existing_data, file, indent=4)
-        print(f"[成功] 成功移除 ID {id} 的元素")
-    except KeyError:
-        print(f"[錯誤] 找不到指定 ID 的元素: {id}")
+# --------------------------------------------
 
 
 # 字元寬度比例計算

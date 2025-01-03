@@ -12,17 +12,19 @@ from apps.example.lineInfo import *
 from apps.example.writeReadJson import *
 
 # 指令說明選單
-from apps.menu.main import menuMain
+from apps.menu.main import mant0u_bot_main, mant0u_bot_instructions
 from apps.menu.detail import menuDetail
 # from apps.menu.example import menuExample, menuDetailExample
 
 from apps.common.common import *
 from apps.common.recordMessage import recordTextMessage, readTextMessage
 from apps.common.dateConverter import *
+from apps.common.firebase import *
 
-from apps.ai.main import aiMain, aiVision, aiMant0u, aiMant0uText
+from apps.ai.main import aiMain, aiVision, aiMant0u
+# from apps.fixTwitter.main import twitterMain
 from apps.fixTwitter.new import twitterNew
-from apps.fixInstagram.new import instaNew
+# from apps.fixInstagram.new import instaNew
 
 from apps.searchWeb.main import searchWeb, searchWebShopping, searchWebVideo, searchWebMovie, searchWebAnime, searchWebMusic, searchWebImg, searchMap
 
@@ -41,15 +43,16 @@ from apps.translate.main import translateMain, translatePostback
 from apps.randomDice.main import randomDiceMain
 from apps.randomCoin.main import randomCoinMain
 from apps.randomCoin.advanced import randomCoinAdvanced
-from apps.randomNumber.main import randomNumberMain
-from apps.randomSlot.main import randomSlotMain
-from apps.randomPoker.main import randomPokerMain
-from apps.randomBwaBwei.main import randomBwaBweiMain
-from apps.randomOkamikuji.main import randomOkamikujiMain
-from apps.randomWhichOne.main import randomWhichOneMain
-from apps.randomYesOrNo.main import randomYesOrNoMain, checkYesOrNo, randomYesOrNoMainReturn
+from apps.randomNumber.main import random_number_main
+from apps.randomSlot.main import random_slot_main
+from apps.randomPoker.main import random_poker_main
+from apps.randomBwaBwei.main import random_bwabwei_main
+from apps.randomOkamikuji.main import random_okamikuji_main
+from apps.randomWhichOne.main import random_which_one_main
+from apps.randomShuffle.main import random_shuffle_main, random_shuffle_display, random_shuffle_flop
+from apps.randomYesOrNo.main import random_yes_or_no_main, check_yes_or_no, random_yes_or_no_main_return
 
-from apps.randomTarotCards.main import randomTarotCardsMain
+from apps.randomTarotCards.main import random_tarot_cards_main
 from apps.questionnaire.main import questionnaireMain
 
 from apps.japanese.question import japaneseQuestion, japaneseAnswer
@@ -82,7 +85,7 @@ def callback():
     signature = request.headers['X-Line-Signature']
     # get request body as text
     body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
+    # app.logger.info("Request body: " + body)
     # handle webhook body
     try:
         line_handler.handle(body, signature)
@@ -97,7 +100,7 @@ def handle_message(event):
     userMessage = event.message.text
 
     if mant0u_bot_model == "private":
-        print(userMessage)
+        # print(userMessage)
 
         if userMessage == '圖片':
             imageMessageExample(event)
@@ -132,10 +135,9 @@ def handle_message(event):
             return
     
     # =============================== #
-    if userMessage == '饅頭' or userMessage == '功能列表' or userMessage == '指令說明' or userMessage == '說明':
-        menuMain(event)
+
     # 說明
-    elif userMessage.find('？') == 0:
+    if userMessage.find('？') == 0:
         command_text = userMessage[1:]
         menu_list = [
             # ['指令名稱','JSON 檔名'],
@@ -157,8 +159,9 @@ def handle_message(event):
             ['抽籤','randomOkamikuji'],                     #
             ['是不是、要不要、有沒有','randomYesOrNo'],     #
             ['哪個','randomWhichOne'],                      #
-            ['抽牌','randomPoker'],                         #
+            ['撲克牌','randomPoker'],                       #
             ['塔羅牌','randomTarotCards'],                  #
+            ['洗牌','randomShuffle'],                       #
         ]
         for item in menu_list:
             if command_text == item[0]:
@@ -177,8 +180,6 @@ def handle_message(event):
 
     elif userMessage.find('https://vxtwitter.com/') == 0 or userMessage.find('https://fxtwitter.com/') == 0 or userMessage.find('https://twitter.com/') == 0 or userMessage.find('https://x.com/') == 0:
         twitterNew(event, userMessage)
-    elif userMessage.find('https://www.instagram.com/') == 0:
-        instaNew(event, userMessage)
 
     elif userMessage == '扭蛋機' or userMessage == '扭蛋' :
         randomGashaponPlay(event)
@@ -208,29 +209,42 @@ def handle_message(event):
         gameGunSet(event, userMessage)
     elif userMessage == '開槍':
         gameGunPlay(event)
+    
     elif userMessage.find('骰子') >= 0:
         randomDiceMain(event, userMessage)
+
     elif userMessage == '硬幣':
         randomCoinMain(event)
     elif userMessage.find('硬幣：') == 0:
         randomCoinAdvanced(event, userMessage)
+
     elif userMessage.find('亂數') == 0:
-        randomNumberMain(event, userMessage)
+        random_number_main(event, userMessage)
     elif userMessage == '拉霸' or userMessage == 'SLOT':
-        randomSlotMain(event)
-    elif userMessage.find('抽牌') == 0:
-        randomPokerMain(event, userMessage)
+        random_slot_main(event)
+
     elif userMessage.find('抽籤') == 0:
-        randomOkamikujiMain(event, userMessage)
+        random_okamikuji_main(event, userMessage)
     elif userMessage.find('擲筊') == 0:
-        randomBwaBweiMain(event, userMessage)
+        random_bwabwei_main(event, userMessage)
     elif userMessage.find('哪個：') == 0 or userMessage.find('都幾：') == 0:
-        randomWhichOneMain(event, userMessage)
+        random_which_one_main(event, userMessage)
+
+    elif userMessage.find('洗牌：') == 0:
+        random_shuffle_main(event, userMessage)
+    elif userMessage == '翻牌' or userMessage == '抽牌':
+        random_shuffle_display(event)
+    elif userMessage.find('翻牌：') == 0 or userMessage.find('抽牌：') == 0:
+        random_shuffle_flop(event, userMessage)
+
+    elif userMessage.find('撲克牌') == 0:
+        random_poker_main(event, userMessage)
     elif userMessage.find('塔羅牌') == 0:
-        randomTarotCardsMain(event, userMessage)
+        random_tarot_cards_main(event, userMessage)
 
     elif userMessage.find('翻譯：') == 0:
         translateMain(event, userMessage)
+
     elif userMessage.find('搜尋：') == 0:
         searchWeb(event, userMessage)
     elif userMessage.find('購物：') == 0:
@@ -322,14 +336,21 @@ def handle_message(event):
         if event.source.type == 'user':
             reply_message_line = []
             #「是不是、好不好、對不對、有沒有」句型
-            if checkYesOrNo(userMessage): 
-                YesNo_text_message = randomYesOrNoMainReturn(userMessage)
+            if check_yes_or_no(userMessage): 
+                YesNo_text_message = random_yes_or_no_main_return(userMessage)
                 reply_message_line.append(YesNo_text_message)
                 line_bot_api.reply_message(event.reply_token, reply_message_line)
         else:
             #「是不是、好不好、對不對、有沒有」句型
-            if checkYesOrNo(userMessage): 
-                randomYesOrNoMain(event, userMessage)
+            if check_yes_or_no(userMessage): 
+                random_yes_or_no_main(event, userMessage)
+
+    # 主選單
+    if userMessage == '饅頭':
+        mant0u_bot_main(event)
+    elif userMessage == '指令說明':
+        mant0u_bot_instructions(event)
+
 
 
 @line_handler.add(PostbackEvent)
@@ -356,8 +377,6 @@ def handle_postback(event):
         randomGashaponSelect(event, userPostback)
     if userPostback == '扭蛋新增！':
         randomGashaponAddBtnClick(event)
-    if userPostback == '扭蛋取消！':
-        randomGashaponAddCancel(event)
 
     if userPostback.find('日文單字解答：') == 0:
         japaneseAnswer(event, userPostback)

@@ -7,6 +7,8 @@ import os
 import random
 import re
 from apps.common.common import *
+from apps.common.database import *
+
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -68,7 +70,7 @@ def randomGashaponAdd(event, userMessage):
 
     # 讀取檔案
     try:
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
         record_data["list"] = record_data["list"] + gashapon_list  # 追加元素
         record_data["list"] = list(set(record_data["list"]))       # 清除重複元素
         record_data["state"] = "default"
@@ -80,7 +82,7 @@ def randomGashaponAdd(event, userMessage):
         }
 
     # 寫入 JSON 檔案
-    write_json(file_path, source_id, record_data)
+    write_database_combined(file_path, source_id, record_data)
 
     gashapon_info = {
         "text" : "扭蛋機新增成功！",
@@ -112,7 +114,7 @@ def randomGashaponAddBtnClick(event):
 
     # 讀取檔案
     try:
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
         record_data["state"] = "add"
     
     # 如果沒有就新增一個
@@ -123,10 +125,52 @@ def randomGashaponAddBtnClick(event):
         }
 
     # 寫入 JSON 檔案
-    write_json(file_path, source_id, record_data)
+    write_database_combined(file_path, source_id, record_data)
 
-    text_message = TextSendMessage(text= "請問你要新增什麼扭蛋？（使用全形頓號「、」隔開不同項目）" ) # 印出結果
-    line_bot_api.reply_message(event.reply_token, text_message)
+    # 包裝訊息
+    flex_message_contents = []
+    pageTemplate = {
+        "type": "bubble",
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "paddingAll": "16px",
+            "contents": [
+                {
+                    "type": "text",
+                    "text": "想新增什麼扭蛋呢？",
+                    "weight": "bold",
+                    "size": "lg",
+                    "align": "center",
+                    "color": "#043b4a"
+                },
+                {
+                    "type": "text",
+                    "text": f"請直接輸入文字新增\n使用全形頓號「、」隔開不同項目",
+                    "weight": "bold",
+                    "size": "sm",
+                    "align": "center",
+                    "color": "#043b4aaa",
+                    "margin": "8px",
+                    "wrap": True,
+                    "lineSpacing": "4px"
+                },
+            ],
+
+        }
+    }
+
+    flex_message_contents.append( pageTemplate )
+    flex_message = FlexSendMessage(
+        alt_text= '有人在玩扭蛋機！',
+        contents={
+            "type": "carousel",
+            "contents": flex_message_contents
+        }
+    )
+
+    # 發送訊息
+    line_bot_api.reply_message(event.reply_token, flex_message)
 
 # 選擇
 def randomGashaponSelect(event, userPostback):
@@ -140,7 +184,7 @@ def randomGashaponSelect(event, userPostback):
         quick_reply=QuickReply(
             items=[
                 QuickReplyButton(
-                    action=MessageAction(label = "移除項目", text = f"扭蛋移除：{userPostback}")
+                    action=MessageAction(label = "● 移除項目", text = f"扭蛋移除：{userPostback}")
                 ),
             ]
         )
@@ -160,15 +204,29 @@ def randomGashaponRemove(event, userMessage):
     # 讀取檔案
     try:
         # 讀取檔案、移除
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
         record_data["list"].remove(userMessage)
 
         # 寫入 JSON 檔案
-        write_json(file_path, source_id, record_data)
+        write_database_combined(file_path, source_id, record_data)
 
-        text_message = TextSendMessage(text=f"「{userMessage}」從扭蛋機中移除了！")
+        # 包裝訊息
+        text_message = TextSendMessage(
+            text=f"「{userMessage}」從扭蛋機中移除了！",
+            quick_reply=QuickReply(
+                items=[
+                    QuickReplyButton(
+                        action=MessageAction(label = "● 進行扭蛋", text = "扭蛋機")
+                    ),
+                    QuickReplyButton(
+                        action=PostbackAction(label = "○ 新增扭蛋", data = "扭蛋新增！" )
+                    )
+                ]
+            )
+        )
         line_bot_api.reply_message(event.reply_token, text_message)
-    
+
+
     # 沒有這個東西
     except:
         text_message = TextSendMessage(text=f"扭蛋機中沒有「{userMessage}」這個東西！")
@@ -182,13 +240,13 @@ def randomGashaponReset(event):
     # 讀取檔案
     try:
         # 讀取檔案、移除
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
         
         record_data["list"] = []
         record_data["state"] = "default"
         
         # 寫入 JSON 檔案
-        write_json(file_path, source_id, record_data)
+        write_database_combined(file_path, source_id, record_data)
     except:
         return
 
@@ -200,7 +258,7 @@ def get_gashapon_list(event):
     
     # 讀取檔案
     try:
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
 
         gashapon_list = record_data["list"]
         return gashapon_list
@@ -214,18 +272,25 @@ def checkGashaponJson(event, userMessage):
     try:
         source_id = getMessageSourceID(event)   # 取得訊息來源 ID
         file_path = 'randomGashapon'  # 選擇存取的檔案路徑
-        record_data = read_json(file_path, source_id) # 讀取檔案
+
+        # 讀取檔案
+        record_data = read_database_combined(file_path, source_id)
+
         if record_data["state"] == "add": 
             # userMessage = "扭蛋新增："+ userMessage
             # randomGashaponAdd(event, userMessage)
             randomGashaponAddCheck(event, userMessage)
+
+            # 取消『新增』狀態
+            record_data["state"] = "default"
+            write_database_combined(file_path, source_id, record_data)
 
         print('[訊息] 扭蛋機新增狀態 已開啟')
     except:
         print('[訊息] 扭蛋機新增狀態 未開啟')
         return
 
-# 重複確認新增
+# 確認新增狀態
 def randomGashaponAddCheck(event, userMessage):
 
     # 整理文字
@@ -235,39 +300,101 @@ def randomGashaponAddCheck(event, userMessage):
     gashapon_list_len = str( len(gashapon_list) )
 
     # 包裝訊息
-    text_message = TextSendMessage(
-        text=f"是否新增「{gashapon_list_text}」，共 {gashapon_list_len} 個扭蛋？",
-        quick_reply=QuickReply(
-            items=[
-                QuickReplyButton(
-                    action=MessageAction(label = "新增扭蛋", text = f"扭蛋新增：{gashapon_list_text}")
-                ),
-                QuickReplyButton(
-                    action=MessageAction(label = "重置後新增", text = f"扭蛋重置新增：{gashapon_list_text}")
-                ),
-                QuickReplyButton(
-                    action=PostbackAction(label = "取消", data="扭蛋取消！")
-                ),
-            ]
-        )
+    flex_message_contents = []
+    pageTemplate = {
+        "type": "bubble",
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "paddingAll": "16px",
+            "contents": [
+                {
+                    "type": "text",
+                    "text": "扭蛋機新增",
+                    "weight": "bold",
+                    "size": "lg",
+                    "align": "center",
+                    "color": "#043b4a"
+                },
+                {
+                    "type": "text",
+                    "text": f"你確定要新增這些扭蛋項目？\n共 {gashapon_list_len} 個扭蛋。\n分別是：{gashapon_list_text}？",
+                    "weight": "bold",
+                    "size": "sm",
+                    "align": "center",
+                    "color": "#043b4aaa",
+                    "margin": "8px",
+                    "wrap": True,
+                    "lineSpacing": "4px"
+                },
+                {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "margin": "12px",
+                    "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "text": "重置後新增",
+                            "color": "#12728c",
+                            "weight": "bold"
+                        }
+                        ],
+                        "justifyContent": "center",
+                        "alignItems": "center",
+                        "paddingAll": "8px",
+                        "cornerRadius": "8px",
+                        "action": {
+                        "type": "message",
+                        "label": "扭蛋重置新增",
+                        "text": f"扭蛋重置新增：{gashapon_list_text}"
+                        }
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                        {
+                            "type": "text",
+                            "text": "新增",
+                            "color": "#12728c",
+                            "weight": "bold"
+                        }
+                        ],
+                        "justifyContent": "center",
+                        "alignItems": "center",
+                        "paddingAll": "8px",
+                        "cornerRadius": "8px",
+                        "backgroundColor": "#7acfe522",
+                        "margin": "8px",
+                        "action": {
+                        "type": "message",
+                        "label": "新增",
+                        "text": f"扭蛋新增：{gashapon_list_text}"
+                        }
+                    }
+                    ],
+                }
+            ],
+
+        }
+    }
+
+    flex_message_contents.append( pageTemplate )
+    flex_message = FlexSendMessage(
+        alt_text= '有人在玩扭蛋機！',
+        contents={
+            "type": "carousel",
+            "contents": flex_message_contents
+        }
     )
+
     # 發送訊息
-    line_bot_api.reply_message(event.reply_token, text_message)
+    line_bot_api.reply_message(event.reply_token, flex_message)
 
-# 新增取消
-def randomGashaponAddCancel(event):
-    source_id = getMessageSourceID(event)   # 取得訊息來源 ID
-    file_path = 'randomGashapon'  # 選擇存取的檔案路徑
-
-    record_data = read_json(file_path, source_id)
-    record_data["state"] = "default"
-
-    # 寫入 JSON 檔案
-    write_json(file_path, source_id, record_data)
-
-    # 包裝訊息、發送訊息
-    text_message = TextSendMessage(text="取消新增扭蛋～")
-    line_bot_api.reply_message(event.reply_token, text_message)
 
 # 扭蛋結果
 def pageTemplate_result(gashapon_info):
@@ -512,20 +639,15 @@ def flexMessage_reply(event, flex_message_contents, gashapon_result):
 
     quick_reply_list = [
         QuickReplyButton(
-            action=MessageAction(label = "進行扭蛋", text = "扭蛋機")
+            action=MessageAction(label = "● 進行扭蛋", text = "扭蛋機")
         ),
         QuickReplyButton(
-            action=MessageAction(label = "重置機器", text = "扭蛋重置")
+            action=MessageAction(label = "○ 重置機器", text = "扭蛋重置")
+        ),
+        QuickReplyButton(
+            action=PostbackAction(label = "○ 新增扭蛋", data = "扭蛋新增！" )
         )
     ]
-
-    if gashapon_result != "":
-        quick_reply_list.append(
-            QuickReplyButton(
-                action=MessageAction(label = "搜尋更多", text = "搜尋：" + gashapon_result)
-            )
-        )
-
 
     # 包裝訊息
     flex_message = FlexSendMessage(

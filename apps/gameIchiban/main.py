@@ -6,6 +6,7 @@ from linebot.models import *
 import os
 import random
 from apps.common.common import *
+from apps.common.database import *
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -39,7 +40,7 @@ def gameIchibanSet(event):
         "state": game_state
     }
     # 寫入 JSON 檔案
-    write_json(file_path, source_id, record_data)
+    write_database_combined(file_path, source_id, record_data)
 
     game_text = "一番賞準備完成"
     game_img = "Q.png"
@@ -64,7 +65,7 @@ def gameIchibanPlay(event, userMessage):
     
     # 讀取檔案
     try:
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
         game_state = record_data["state"] # 狀態
         game_award = record_data["award"] # 獎項
 
@@ -97,7 +98,7 @@ def gameIchibanPlay(event, userMessage):
                         "state": game_state
                     }
                     # 寫入 JSON 檔案
-                    write_json(file_path, source_id, record_data)
+                    write_database_combined(file_path, source_id, record_data)
 
                     # 取得未被按下的索引
                     not_pressed_index = get_not_pressed_index(game_state) + 1
@@ -136,7 +137,7 @@ def gameIchibanPlay(event, userMessage):
 #     source_id = getMessageSourceID(event)   # 取得訊息來源 ID
 #     file_path = 'gameIchiban'  # 選擇存取的檔案路徑
     
-#     loaded_data = read_json(file_path, source_id)  # 讀取檔案
+#     loaded_data = read_database_combined(file_path, source_id)  # 讀取檔案
 
 #     text_message = TextSendMessage(text= str(loaded_data) ) # 印出結果
 #     line_bot_api.reply_message(event.reply_token, text_message)

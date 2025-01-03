@@ -38,11 +38,20 @@
 
 - 此專案需部屬至 Vercel 伺服器，部屬時所需設定的環境變數（Environment Variables）
 
-  - LINE_CHANNEL_ACCESS_TOKEN：於 Line Developers 後台取得
-  - LINE_CHANNEL_SECRET：於 Line Developers 後台取得
-  - IMGBB_KEY：於 ImgBB 登入後取得，若不需要可以先移除「以圖搜圖」功能。
-  - GEMINI_KEY：於 Google AI Studio 取得，注意選用時的方案是否免費。若不需要可以先移除「AI」功能。
-  - MANT0U_BOT_MODEL：測試用可以亂打，輸入「private」可以觸發測試語法。
+### 環境變數
+
+1. LINE
+   - `LINE_CHANNEL_ACCESS_TOKEN`：於 Line Developers 後台取得
+   - `LINE_CHANNEL_SECRET`：於 Line Developers 後台取得
+2. Firebase - Realtime Database
+   - `FIREBASE_URL`：資料庫讀寫的網址。
+   - `FIREBASE_PRIVATE_KEY`：資料庫的私密金鑰，由 serviceAccountKey.json 檔取得。
+   - `FIREBASE_CLIENT_EMAIL`：一串 EMAIL，由 serviceAccountKey.json 檔取得。
+   - `FIREBASE_CLIENT_X509_CERT_URL`：一串連結，由 serviceAccountKey.json 檔取得。
+3. 其他
+   - `IMGBB_KEY`：於 ImgBB 登入後取得，若不需要可以先移除「以圖搜圖」功能。
+   - `GEMINI_KEY`：於 Google AI Studio 取得，注意選用時的方案是否免費。若不需要可以先移除「AI」功能。
+   - `MANT0U_BOT_MODEL`：測試用可以亂打，輸入「private」可以觸發測試語法。
 
 - 詳細部屬教學可以參考此簡報。
 
@@ -54,7 +63,6 @@
 - 搜尋引擎 (search)
 - 翻譯功能 (translate)
 - Twitter 擷取訊息 (fixTwitter)
-- Instagram 擷取訊息 (fixInstagram)
 - 貨幣換算 (currency)
 - 海盜桶 (gamePopUpPirate)
 - 一番賞 (gameIchiban)
@@ -69,7 +77,8 @@
 - 抽籤 (randomOkamikuji)
 - 是不是、要不要、有沒有 (randomYesOrNo)
 - 哪個 (randomWhichOne)
-- 抽牌 (randomPoker)
+- 撲克牌 (randomPoker)
+- 洗牌/翻牌 (randomShuffle)
 - 塔羅牌 (randomTarotCards)
 - 日曆 (calendar)
 - 計算機 (calculator)
@@ -98,6 +107,28 @@
 - **requirements.txt**
 
   記錄專案所需要的第三方套件與其版本資訊。這個檔案可以提示並幫助伺服器或開發者安裝對應的第三方套件，確保專案在不同環境中能夠一致地運行。
+
+## 程式紀錄暫存與資料庫
+
+- 於專案目錄「/apps/common/database.py」的這個程式，主要是寫「紀錄讀取/寫入/移除」的功能。用於製作需要紀錄遊玩狀態的功能，例如：扭蛋機、一番賞、海盜桶等。
+- 「database.py」程式中，針對「紀錄讀取/寫入/移除」都有寫三種寫法，分別為「temporary（暫存）」、「firebase（資料庫）」、「combined（暫存+資料庫）」。
+  - temporary：資料會讀寫於專案目錄「/tmp」中，這是 Vercel 提供目錄中唯一可以寫入資料的路徑。優點是讀寫很快，但缺點是裡面的資料會不定期移除。
+  - firebase：資料會保存到 Firebase 的 Realtime Database 中。只要在 firebase 開一個專案後，使用 Realtime Database 服務即可使用；詳細設定的方法下面會解釋。
+  - combined：就是以上兩種的結合，為了避免讀取 firebase 時間過久，會利用 temporary 先存暫時的紀錄，必要的時候再同步紀錄。
+- Firebase Realtime Database 的設定方式
+  - 避免資料庫公開，使用時須設定讀寫權限，需要使用 Firebase 的認證金鑰來限制使用者。
+  - 需要設定四個環境變數：`FIREBASE_URL`、`FIREBASE_PRIVATE_KEY`、`FIREBASE_CLIENT_EMAIL`、`FIREBASE_CLIENT_X509_CERT_URL`
+  - 於 Firebase 專案中「專案設定 > 服務帳戶」的這個頁面，可以先看到 `databaseURL:"https://.....`，這個就是 `FIREBASE_URL` 。
+  - 於該頁面下方點選「產生新的金鑰」按鈕，可以得到其他三個環境變數 `FIREBASE_PRIVATE_KEY`、`FIREBASE_CLIENT_EMAIL`、`FIREBASE_CLIENT_X509_CERT_URL`。
+  - Realtime Database 的「規則」設定：
+    ```json
+    {
+      "rules": {
+        ".read": "auth.admin === true",
+        ".write": "auth.admin === true"
+      }
+    }
+    ```
 
 ## 參考網站、專案、API
 

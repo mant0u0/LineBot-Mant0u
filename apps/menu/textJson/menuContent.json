@@ -94,12 +94,16 @@
                 "actionText": "哪個"
             },
             {
-                "labelText": "抽牌",
-                "actionText": "抽牌"
+                "labelText": "撲克牌",
+                "actionText": "撲克牌"
             },
             {
                 "labelText": "塔羅牌",
                 "actionText": "塔羅牌"
+            },
+            {
+                "labelText": "洗牌/翻牌",
+                "actionText": "洗牌"
             }
         ]
     }

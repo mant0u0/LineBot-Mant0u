@@ -1,6 +1,5 @@
 # 擲筊
 from linebot import LineBotApi, WebhookHandler
-from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 
 import os
@@ -9,31 +8,33 @@ import random
 from apps.common.common import *
 from apps.ai.gemini import gemini
 # from apps.ai.openai import openai
+from apps.common.database import *
+from apps.randomBwaBwei.template import *
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 
-def randomBwaBweiMain(event, userMessage):
+def random_bwabwei_main(event, userMessage):
 
     # 讀取
     source_id = getMessageSourceID(event)   # 取得訊息來源 ID
     file_path = 'randomBwaBwei'   # 選擇存取的檔案路徑
-    loaded_data = read_json(file_path, source_id)  # 讀取檔案
+    loaded_data = read_database_combined(file_path, source_id)  # 讀取檔案
     try:
         loaded_data["combo"] = loaded_data["combo"] + 1
     except:
         loaded_data = {"combo": 0}
 
     # 取得擲筊結果
-    result_data = getBwaBweiResult(loaded_data["combo"])
+    result_data = get_bwabwei_result(loaded_data["combo"])
     
     # 紀錄結果
     if result_data["state"] == "聖筊":
-        write_json(file_path, source_id, loaded_data)    # 寫入 JSON 檔案
+        write_database_combined(file_path, source_id, loaded_data)    # 寫入 JSON 檔案
     else:
         loaded_data = {"combo": 0}
-        write_json(file_path, source_id, loaded_data)    # 寫入 JSON 檔案
+        write_database_combined(file_path, source_id, loaded_data)    # 寫入 JSON 檔案
 
 
     # 取得擲筊圖片
@@ -41,86 +42,92 @@ def randomBwaBweiMain(event, userMessage):
     result_bg_img_url   = localImg(f"randomBwaBwei/BG.jpg")
     result_icon_img_url = localImg(f"randomBwaBwei/icon-{result_data['icon']}.png")
 
-
-    # flexMessage 容器
-    flex_message_contents = []
-
     # 一般模式：只顯示擲筊結果
     if userMessage == "擲筊":
-        bwaBwei_model = "default"
+
+        # flexMessage 容器
+        flex_message_contents = []
 
         # 擲筊結果：將 pageTemplate 放入 flex_message_contents 中
-        pageTemplate = pageTemplate_result(result_img_url, result_data)
+        pageTemplate = random_bwabwei_first_page_template(result_img_url, result_data)
         flex_message_contents.append( pageTemplate )
 
+        # 隨機產生下一句話
+        sentence_1 = random_sentence()
+        sentence_2 = random_sentence()
+        sentence_3 = random_sentence()
 
-    
+        # 包裝訊息
+        flex_message = FlexSendMessage(
+            alt_text= '有人擲筊囉！',
+            contents={
+                "type": "carousel",
+                "contents": flex_message_contents
+            },
+            quick_reply=QuickReply(
+                items=[
+                    QuickReplyButton( action=MessageAction(label="● 再擲一次", text="擲筊") ),
+                    QuickReplyButton( action=MessageAction(label="○ " + sentence_1, text='擲筊：'+ sentence_1) ),
+                    QuickReplyButton( action=MessageAction(label="○ " + sentence_2, text='擲筊：'+ sentence_2) ),
+                    QuickReplyButton( action=MessageAction(label="○ " + sentence_3, text='擲筊：'+ sentence_3) ),
+                ]
+            )
+        )
+        
+        # 發送訊息
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
     #  AI 模式：顯示擲筊結果、運勢分析
     if userMessage.find('擲筊：') == 0:
-        bwaBwei_model = "ai"
+
+        # flexMessage 容器
+        flex_message_contents = []
 
         # 紀錄動作指令
         bwaBwei_action_text = userMessage
 
         # 整理文字、取得運勢分析
         userMessage = userMessage.replace('擲筊：', '')
-        result_fortune = getOkamikujiFortune(result_data["illustrate"], userMessage)
+        result_fortune = get_bwabwei_fortune(result_data["illustrate"], userMessage)
 
         # 擲筊結果：將 pageTemplate 放入 flex_message_contents 中
-        pageTemplate = pageTemplate_result(result_img_url, result_data)
+        pageTemplate = random_bwabwei_first_page_template(result_img_url, result_data)
         flex_message_contents.append( pageTemplate )
 
         # 運勢分析結果：將 pageTemplate 放入 flex_message_contents 中
-        pageTemplate = pageTemplate_fortune( result_bg_img_url, result_icon_img_url, result_fortune )
+        pageTemplate = random_bwabwei_fortune_page_template( result_bg_img_url, result_icon_img_url, result_fortune )
         flex_message_contents.append( pageTemplate )
 
-    # 當 flex_message_contents 有內容，回傳訊息
-    if flex_message_contents != []:
-        if bwaBwei_model == "default":
-            # 包裝訊息
-            flex_message = FlexSendMessage(
-                alt_text= '有人擲筊囉！',
-                contents={
-                    "type": "carousel",
-                    "contents": flex_message_contents
-                    },
-                quick_reply=QuickReply(
-                    items=[
-                        QuickReplyButton(
-                            action=MessageAction(label = "再擲一次", text = "擲筊")
-                        ),
-                    ]
-                )
-            )
-            
-        elif bwaBwei_model == "ai":
-            # 包裝訊息
-            flex_message = FlexSendMessage(
-                alt_text= '有人擲筊囉！',
-                contents={
-                    "type": "carousel",
-                    "contents": flex_message_contents
-                    },
-                quick_reply=QuickReply(
-                    items=[
-                        QuickReplyButton(
-                            action=MessageAction(label = "再擲一次", text = "擲筊")
-                        ),
-                        QuickReplyButton(
-                            action=MessageAction(label = "再問一次", text = bwaBwei_action_text)
-                        )
-                    ]
-                )
-            )
+        # 隨機產生下一句話
+        sentence_1 = random_sentence()
+        sentence_2 = random_sentence()
+        sentence_3 = random_sentence()
 
+        # 包裝訊息
+        flex_message = FlexSendMessage(
+            alt_text= '有人擲筊囉！',
+            contents={
+                "type": "carousel",
+                "contents": flex_message_contents
+            },
+            quick_reply=QuickReply(
+                items=[
+                    QuickReplyButton( action=MessageAction(label="● 再問一次", text= "擲筊：" + userMessage) ),
+                    QuickReplyButton( action=MessageAction(label="● 再擲一次", text="擲筊") ),
+                    QuickReplyButton( action=MessageAction(label="○ " + sentence_1, text='擲筊：'+ sentence_1) ),
+                    QuickReplyButton( action=MessageAction(label="○ " + sentence_2, text='擲筊：'+ sentence_2) ),
+                    QuickReplyButton( action=MessageAction(label="○ " + sentence_3, text='擲筊：'+ sentence_3) ),
+                    QuickReplyButton( action=MessageAction(label="改塔羅牌 ➜", text='塔羅牌：'+ userMessage) ),
+                    QuickReplyButton( action=MessageAction(label="改用抽籤 ➜", text='抽籤：'+ userMessage) ),
+                ]
+            )
+        )
 
         # 發送訊息
         line_bot_api.reply_message(event.reply_token, flex_message)
-        return
-
 
 # 擲筊結果
-def getBwaBweiResult(combo):
+def get_bwabwei_result(combo):
     # 取得隨機點數
     result_list = ["聖筊", "聖筊", "聖筊", "無筊", "笑筊"]
     result = random.choice(result_list)
@@ -150,7 +157,6 @@ def getBwaBweiResult(combo):
                 "illustrate": "非常允許、同意或表示非常順利",
                 "icon": "O"
             }
-
     if result == "無筊":
         result_data = {
             "state": "無筊",
@@ -172,7 +178,7 @@ def getBwaBweiResult(combo):
 
 
 # 擲筊運勢分析
-def getOkamikujiFortune(result_illustrate, userMessage):
+def get_bwabwei_fortune(result_illustrate, userMessage):
     
     # openai
     # askText = f"請扮演神明說話，針對「{userMessage}」表示「{result}」。（請在 20~50 字以內，用古文的方式回覆）"
@@ -184,119 +190,3 @@ def getOkamikujiFortune(result_illustrate, userMessage):
 
     return result_fortune
 
-# 擲筊結果 pageTemplate
-def pageTemplate_result(result_img_url, result_data):
-    pageTemplate = {
-        "type": "bubble",
-        "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-                {
-                    "type": "image",
-                    "url": result_img_url,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "1:1",
-                },
-                {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "contents": [
-                        {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                                {
-                                    "type": "box",
-                                    "layout": "horizontal",
-                                    "contents": [
-                                        {
-                                            "type": "text",
-                                            "text": result_data["text"],
-                                            "size": "lg",
-                                            "color": "#c93a38",
-                                            "weight": "bold",
-                                            "align": "center"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "spacing": "xs"
-                        }
-                    ],
-                    "position": "absolute",
-                    "offsetBottom": "0px",
-                    "offsetStart": "0px",
-                    "offsetEnd": "0px",
-                    "paddingAll": "20px"
-                }
-            ],
-            "paddingAll": "0px",
-            "action": {
-                "type": "message",
-                "label": "action",
-                "text": "擲筊"
-            },
-        }
-    }
-
-    return pageTemplate
-
-# 運勢分析結果 pageTemplate
-def pageTemplate_fortune( result_bg_img_url, result_icon_img_url, result_fortune ):
-    pageTemplate = {
-        "type": "bubble",
-        "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-                {
-                    "type": "image",
-                    "url": result_bg_img_url,
-                    "size": "full",
-                    "aspectMode": "cover",
-                    "aspectRatio": "1:1"
-                },
-                {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                        {
-                            "type": "image",
-                            "url": result_icon_img_url,
-                            "size": "xxs",
-                        },
-                        {
-                            "type": "text",
-                            "text": result_fortune,
-                            "color": "#c93a38",
-                            "wrap": True,
-                            "size": "md",
-                            "weight": "bold",
-                            "lineSpacing": "8px",
-                            "margin": "lg",
-                        },
-                        {
-                            "type": "text",
-                            "text": "　",
-                            "wrap": True,
-                            "size": "md",
-                            "weight": "bold",
-                            "lineSpacing": "8px",
-                            "margin": "md",
-                        }
-                    ],
-                    "position": "absolute",
-                    "width": "100%",
-                    "height": "100%",
-                    "justifyContent": "center",
-                    "alignItems": "center",
-                    "paddingAll": "12%"
-                }
-            ],
-            "paddingAll": "0px"
-        }
-    }
-
-    return pageTemplate

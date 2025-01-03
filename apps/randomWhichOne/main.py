@@ -11,7 +11,7 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # 主要
-def randomWhichOneMain(event, userMessage):
+def random_which_one_main(event, userMessage):
 
     userMessage = userMessage.replace('哪個：', '')
     userMessage = userMessage.replace('都幾：', '')
@@ -28,7 +28,7 @@ def randomWhichOneMain(event, userMessage):
 
     # 當有兩個選項時，啟動迷因按鈕
     if len(split_result) == 2:
-        randomWhichOneMemeButton(event, split_result, userMessage)
+        random_which_one_meme_button(event, split_result, userMessage)
     
     else:
         result = str(random.choice(split_result))
@@ -50,7 +50,7 @@ def randomWhichOneMain(event, userMessage):
 
 
 # 迷因按鈕
-def randomWhichOneMemeButton(event, split_result, userMessage):
+def random_which_one_meme_button(event, split_result, userMessage):
     
     result = str(random.choice(split_result))
     before_text_list = ["我覺得是","問就是","感覺是","就選","這個！","隨便啦～", "All in","一律都選"]

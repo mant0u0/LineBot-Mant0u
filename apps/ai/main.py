@@ -1,4 +1,4 @@
-# from apps.ai.openai import openai
+from apps.ai.openai import openai
 from apps.ai.gemini import gemini, geminiVision, geminiPrompt
 
 from apps.common.zhconvert import zhconvert
@@ -158,7 +158,7 @@ def aiMant0uText(userMessage):
                     quick_reply_list.append(quick_reply_item)
 
     key_word = [
-        "扭蛋機","一番賞","海盜桶","猜拳","手槍","抽牌","抽籤",
+        "扭蛋機","一番賞","海盜桶","猜拳","手槍","撲克牌","抽籤",
         "擲筊","塔羅牌","硬幣","日文單字","骰子"
     ]
     for kw in key_word:
@@ -170,7 +170,7 @@ def aiMant0uText(userMessage):
             illustrate_quick_reply = True
     if return_text.find('饅頭') >= 0 or illustrate_quick_reply:
         quick_reply_item = QuickReplyButton(
-            action=MessageAction(label="更多指令 ➜", text="饅頭")
+            action=MessageAction(label="更多指令 ➜", text="指令說明")
         )
         quick_reply_list.append(quick_reply_item)
 
@@ -218,6 +218,8 @@ def aiTest(event, userMessage):
     # 包裝訊息、發送訊息
     text_message = TextSendMessage(text=return_text)
     line_bot_api.reply_message(event.reply_token, text_message)
+
+
 
 
 def aiTranslateChinese(userMessage):

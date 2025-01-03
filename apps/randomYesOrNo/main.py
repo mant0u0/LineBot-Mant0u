@@ -9,9 +9,9 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 # 主要
-def randomYesOrNoMain(event, userMessage):
+def random_yes_or_no_main(event, userMessage):
     # 取得重複字元 (陣列：只會使用第 0 個元素 repeated_chars[0] )
-    repeated_chars = checkYesOrNo(userMessage)
+    repeated_chars = check_yes_or_no(userMessage)
 
     # 亂數(0～1)：肯定 1 或否定 0
     randomNum = random.randint(0, 1)
@@ -39,9 +39,9 @@ def randomYesOrNoMain(event, userMessage):
     line_bot_api.reply_message(event.reply_token, text_message)
 
 
-def randomYesOrNoMainReturn(userMessage):
+def random_yes_or_no_main_return(userMessage):
     # 取得重複字元 (陣列：只會使用第 0 個元素 repeated_chars[0] )
-    repeated_chars = checkYesOrNo(userMessage)
+    repeated_chars = check_yes_or_no(userMessage)
 
     # 亂數(0～1)：肯定 1 或否定 0
     randomNum = random.randint(0, 1)
@@ -68,10 +68,8 @@ def randomYesOrNoMainReturn(userMessage):
     return text_message
 
 
-
-
 # 判斷是否為「X不X」、「有沒有」句型，並取得重複字元
-def checkYesOrNo(userMessage):
+def check_yes_or_no(userMessage):
     count = userMessage.count("不")
     if count >= 1:
         indices = [i for i, x in enumerate(userMessage) if x == "不"]

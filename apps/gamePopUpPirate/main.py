@@ -6,6 +6,7 @@ from linebot.models import *
 import os
 import random
 from apps.common.common import *
+from apps.common.database import *
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -41,7 +42,7 @@ def gamePopUpPirateSet(event):
         "state": game_state
     }
     # 寫入 JSON 檔案
-    write_json(file_path, source_id, record_data)
+    write_database_combined(file_path, source_id, record_data)
 
     game_text = "海盜桶準備完成"
     game_img = "set.png"
@@ -67,7 +68,7 @@ def gamePopUpPiratePlay(event, userMessage):
     
     # 讀取檔案
     try:
-        record_data = read_json(file_path, source_id)
+        record_data = read_database_combined(file_path, source_id)
         game_state = record_data["state"] # 狀態
         game_organ = record_data["organ"] # 機關
 
@@ -102,13 +103,13 @@ def gamePopUpPiratePlay(event, userMessage):
                             "state": game_state
                         }
                         # 寫入 JSON 檔案
-                        write_json(file_path, source_id, record_data)
+                        write_database_combined(file_path, source_id, record_data)
                     
                     else: # 海盜桶射出
                         game_text = f"插入{ str(user_index + 1) }號，海盜射出來了！"
                         game_img = "end.png"
                         # 移除資料
-                        remove_json(file_path, source_id)
+                        remove_database_combined(file_path, source_id)
 
 
                     # 取得未被按下的索引

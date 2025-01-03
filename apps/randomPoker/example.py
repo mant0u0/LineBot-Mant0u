@@ -103,7 +103,7 @@ def randomPokerExample(event):
                         "action": {
                             "type": "message",
                             "label": "action",
-                            "text": "抽牌：1" ,
+                            "text": "撲克牌：1" ,
                         },
                     }
                 },

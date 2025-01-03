@@ -39,7 +39,7 @@ def menuDetail(event, fileName):
         flex_message_quick_reply.append(items)
     # 快速回覆：「更多指令」按鈕
     flex_message_quick_reply.append( 
-        QuickReplyButton(action=MessageAction(label="更多指令 ➜", text="饅頭"))
+        QuickReplyButton(action=MessageAction(label="更多指令 ➜", text="指令說明"))
     )
 
     

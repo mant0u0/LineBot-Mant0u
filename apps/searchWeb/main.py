@@ -47,7 +47,15 @@ def searchWeb(event, userMessage):
             {
                 "labelText": "Chatgpt",
                 "url": "https://chatgpt.com/?hints=search&q=" + keyword
-            }
+            },
+            # {
+            #     "labelText": "Claude",
+            #     "url": "https://claude.ai/new/?q=" + keyword
+            # },
+            # {
+            #     "labelText": "Perplexity",
+            #     "url": "https://www.perplexity.ai/search?q=" + keyword
+            # },
         ],
         "alt_text":"搜尋結果！",
         "quick_reply" : [
@@ -147,6 +155,12 @@ def searchWebVideo(event, userMessage):
                 "labelText": "Justwatch 搜尋引擎",
                 "url": "https://www.justwatch.com/tw/search?q=" + keyword
             },
+            {
+                "labelText": "其他 OTT 影音搜尋",
+                # "url": "https://ott-search.com/",
+                "url": localHtml("ott-search.html")+"/?query=" + keyword
+            },
+
         ],
         "alt_text":"搜尋結果！",
         "quick_reply" : [
