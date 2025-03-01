@@ -57,10 +57,6 @@ def twitter_message_main(event, userMessage):
                     }
                 )
 
-
-
-
-
     if tweet_type == "圖片推文":
         width, height, img_urls = get_photo_info(twitter_data)
         ratio = str(width) + ":" + str(height)
@@ -80,22 +76,23 @@ def twitter_message_main(event, userMessage):
         # 發送訊息
         line_bot_api.reply_message(event.reply_token, [flex_message, flex_message_text_page])
 
-    elif tweet_type == "影片推文":
-        
+    elif tweet_type == "影片推文" or tweet_type == "GIF 推文":
         width, height, img_urls, video_url = get_video_info(twitter_data)
-
         ratio = str(width) + ":" + str(height)
-
         template = twitter_video_page_template( video_url, img_urls, ratio )
+
+        if tweet_type == "GIF 推文":
+            alt_text = 'Twitter GIF 擷取'
+        else:
+            alt_text = 'Twitter 影片擷取'
 
         # 包裝訊息：影片無法使用 carousel 輪播屬性的 flex message
         flex_message = FlexSendMessage(
-            alt_text= 'Twitter 影片擷取',
+            alt_text= alt_text,
             contents= template,
         )
         # 發送訊息
         line_bot_api.reply_message(event.reply_token, [flex_message, flex_message_text_page])
-        # line_bot_api.reply_message(event.reply_token, [flex_message])
 
     elif tweet_type == "純文字推文":
         line_bot_api.reply_message(event.reply_token, [flex_message_text_page])
@@ -126,7 +123,6 @@ def fix_twitter_url(text):
 def reset_twitter_url(url):
     url = url.replace("https://api.fxtwitter.com/", "https://twitter.com/")
     return url
-
 
 # 取得 Twitter 資料
 def get_twitter_data(url):
@@ -167,7 +163,6 @@ def get_twitter_data(url):
         print(f"請求錯誤: {e}")
         return None
 
-
 # 判斷訊息種類
 def identify_tweet_type(tweet_data):
 
@@ -190,6 +185,8 @@ def identify_tweet_type(tweet_data):
     
     if media_type == 'video':
         return "影片推文"
+    elif media_type == 'gif':
+        return "GIF 推文"
     elif media_type == 'photo':
         # 檢查照片數量
         photos = media.get('photos', [])
