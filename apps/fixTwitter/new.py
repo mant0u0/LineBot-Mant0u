@@ -242,6 +242,7 @@ def twitterVideoPageTemplate( url, img, ratio ):
 
     return pageTemplate
 
+
 # 文字頁面模板
 def twitterTextPageTemplate( tweet_data, translation_status ):
 

@@ -51,6 +51,7 @@
 3. 其他
    - `IMGBB_KEY`：於 ImgBB 登入後取得，若不需要可以先移除「以圖搜圖」功能。
    - `GEMINI_KEY`：於 Google AI Studio 取得，注意選用時的方案是否免費。若不需要可以先移除「AI」功能。
+   - `GROQ_API_KEY`：Groq 的 AI 服務，於 Groq 登入取得。
    - `MANT0U_BOT_MODEL`：測試用可以亂打，輸入「private」可以觸發測試語法。
 
 - 詳細部屬教學可以參考此簡報。

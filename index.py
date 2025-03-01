@@ -20,10 +20,12 @@ from apps.common.common import *
 from apps.common.recordMessage import recordTextMessage, readTextMessage
 from apps.common.dateConverter import *
 from apps.common.firebase import *
+from apps.account.userInfo import *
 
-from apps.ai.main import aiMain, aiVision, aiMant0u
+from apps.ai.main import aiMain, aiVision, aiMant0u, aiFreeTest
+from apps.ai.groq_whisper import groqWhisper
 # from apps.fixTwitter.main import twitterMain
-from apps.fixTwitter.new import twitterNew
+from apps.fixTwitter.v2 import twitter_message_main
 # from apps.fixInstagram.new import instaNew
 
 from apps.searchWeb.main import searchWeb, searchWebShopping, searchWebVideo, searchWebMovie, searchWebAnime, searchWebMusic, searchWebImg, searchMap
@@ -36,7 +38,9 @@ from apps.gameRPS.main import gameRPSMain, gameRPSPlay
 from apps.randomGashapon.main import *
 from apps.randomGashapon.ai import randomGashaponAi
 
-from apps.currency.main import currencyMain, currencyControlMenu, currencyDiscount, currencyMultiple, currencyDivide, currencyTax, extract_currency_conversion
+from apps.currency.main import currencyMain, currencyControlMenu, currencyDiscount, currencyMultiple, currencyDivide, currencyTax
+from apps.currency.preprocess import extract_currency_conversion
+
 
 from apps.translate.main import translateMain, translatePostback
 
@@ -60,7 +64,10 @@ from apps.japanese.wordCards import japaneseWordCards, japaneseVoice
 
 from apps.otherTools.calculator import calculator
 from apps.calendar.main import calendarMain
+# from apps.calendar.example import calendarExample
 
+# from apps.readGoogleSheetsCsv.keywordReply import keywordReply, keywordSet
+# from apps.readGoogleSheetsCsv.badJoke import badJoke
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
@@ -93,46 +100,64 @@ def callback():
         abort(400)
     return 'OK'
 
+# 文字訊息
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 
     # 取得「使用者」訊息
     userMessage = event.message.text
+
     print(userMessage)
 
-    if mant0u_bot_model == "private":
+    # if mant0u_bot_model == "private":
+        # print(userMessage)
 
-        if userMessage == '圖片':
-            imageMessageExample(event)
-            return
-        if userMessage == '文字':
-            textMessageExample(event)
-            return
-        if userMessage == '聲音':
-            audioMessageExample(event)
-            return
-        if userMessage == '讀取':
-            readJsonExample(event)
-            return
-        if userMessage.find('寫入：') == 0:
-            writeJsonExample(event, userMessage)
-            return
-        if userMessage.find('移除') == 0:
-            removeJsonExample(event)
-            return
-        if userMessage == '目錄圖片連結':
-            text_message = TextSendMessage(text= localImg("mant0u.jpg") )
-            line_bot_api.reply_message(event.reply_token, text_message)
-            return
-        if userMessage == 'ID':
-            source_id = getMessageSourceID(event)
-            # 包裝訊息、發送訊息
-            text_message = TextSendMessage(text=source_id)
-            line_bot_api.reply_message(event.reply_token, text_message)
-            return
-        if userMessage == '快速回覆':
-            quickReplyExample(event)
-            return
+        # if userMessage == '圖片':
+        #     imageMessageExample(event)
+        #     return
+        # if userMessage == '文字':
+        #     textMessageExample(event)
+        #     return
+        # if userMessage == '聲音':
+        #     audioMessageExample(event)
+        #     return
+        # if userMessage == '讀取':
+        #     readJsonExample(event)
+        #     return
+        # if userMessage.find('寫入：') == 0:
+        #     writeJsonExample(event, userMessage)
+        #     return
+        # if userMessage.find('移除') == 0:
+        #     removeJsonExample(event)
+        #     return
+        # if userMessage == '目錄圖片連結':
+        #     text_message = TextSendMessage(text= localImg("mant0u.jpg") )
+        #     line_bot_api.reply_message(event.reply_token, text_message)
+        #     return
+        # if userMessage == 'ID':
+        #     source_id = getMessageSourceID(event)
+        #     # 包裝訊息、發送訊息
+        #     text_message = TextSendMessage(text=source_id)
+        #     line_bot_api.reply_message(event.reply_token, text_message)
+        #     return
+        # if userMessage == '快速回覆':
+        #     quickReplyExample(event)
+        #     return
+        # if userMessage == "註冊":
+        #     userInfoRegister(event)
+        #     return
+        # if userMessage == "個人資料" or userMessage == "個人資訊" :
+        #     userInfoDisplay(event)
+        #     return
+        # if userMessage.find('改名：') == 0:
+        #     userInfoRename(event, userMessage)
+        #     return
+        # if userMessage == "誰啊" or userMessage == "誰阿" or userMessage == "換誰":
+        #     randomUserName(event)
+        #     return
+        # if userMessage == "偷錢":
+        #     stealCoinSelect(event)
+        #     return
     
     # =============================== #
 
@@ -170,6 +195,8 @@ def handle_message(event):
 
     elif userMessage.find('饅頭：') == 0 or userMessage.find('饅：') == 0:
         aiMant0u(event, userMessage)
+    elif userMessage.find('AI：') == 0 or userMessage.find('AI:') == 0:
+        aiFreeTest(event, userMessage)
     elif userMessage.find('問：') == 0:
         if mant0u_bot_model == "private":
             aiMain(event, userMessage)
@@ -179,7 +206,8 @@ def handle_message(event):
         aiVision(event, userMessage)
 
     elif userMessage.find('https://vxtwitter.com/') == 0 or userMessage.find('https://fxtwitter.com/') == 0 or userMessage.find('https://twitter.com/') == 0 or userMessage.find('https://x.com/') == 0:
-        twitterNew(event, userMessage)
+        # twitterNew(event, userMessage)
+        twitter_message_main(event, userMessage)
 
     elif userMessage == '扭蛋機' or userMessage == '扭蛋' :
         randomGashaponPlay(event)
@@ -352,7 +380,7 @@ def handle_message(event):
         mant0u_bot_instructions(event)
 
 
-
+# Postback
 @line_handler.add(PostbackEvent)
 def handle_postback(event):
     
@@ -436,8 +464,38 @@ def handle_postback(event):
         line_bot_api.reply_message(event.reply_token, text_message)
         return
 
+    if userPostback.find('偷錢：') == 0:
+        stealCoinAction(event, userPostback)
 
 
+# 聲音訊息
+@line_handler.add(MessageEvent, message=AudioMessage)
+def handle_message_Audio(event):
+    
+    # 取得使用者傳送的聲音訊息
+    message_id = event.message.id
+    message_content = line_bot_api.get_message_content(message_id)
+
+    # 取得訊息來源 ID
+    source_id = getMessageSourceID(event)   
+
+    # 將聲音儲存到本地端
+    with open(f"/tmp/{source_id}.m4a", "wb") as f:
+        f.write(message_content.content)
+
+    # 判斷聲音長度不超過 10 秒
+    if event.message.duration > 10000:
+        text_message = TextSendMessage(text="你講話太長了，超過 10 秒了！")
+        line_bot_api.reply_message(event.reply_token, text_message)
+        return
+    else:
+        MessageText = groqWhisper(f"/tmp/{source_id}.m4a")
+        text_message = TextSendMessage(text=MessageText)
+        line_bot_api.reply_message(event.reply_token, text_message)
+        return
+
+
+# 圖片訊息
 @line_handler.add(MessageEvent, message=ImageMessage)
 def handle_message_Image(event):
     

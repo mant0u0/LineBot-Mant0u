@@ -8,6 +8,8 @@ import re
 import requests
 import json
 from apps.common.common import *
+from apps.currency.preprocess import extract_currency_conversion
+
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -379,86 +381,6 @@ def currencyControlMenu(event, userPostback):
     # 發送訊息
     line_bot_api.reply_message(event.reply_token, text_message)
 
-# 字串辨識貨幣與數字
-def extract_currency_conversion(text):
-    result_num = ""
-    result_currency = []
-    result_currency_index = []
-
-    text = text.replace(' ', '')
-    text = text.replace('萬', '0000')
-    text = text.replace('千', '000')
-    text = text.replace('百', '00')
-
-    text = text.replace(',', '')       # 去除逗號千分位字元
-
-    # 找到數字
-    numbers = re.findall(r'(?<![a-zA-Z])\d+(?:\.\d+)?(?![a-zA-Z])', text)
-
-    if numbers:
-        num = numbers[0]                   # 取得字串中數字：假設只有一個數字
-        num_index = text.find(num)         # 查詢數字序列號
-        num_len = len(num)                 # 取得數字字串長度
-        
-        text = text[num_index + num_len:]  # 擷取字串：將數字以前的字（含數字），全部移除
-        text = text.replace(' ', '')       # 去除空白字元
-        result_num = num
-        print(text)
-        
-    # 找到貨幣關鍵字
-    for currency_code, currency_info in currency_dict.items():
-        for keyword in currency_info["keyword"]:
-            if keyword in text:
-                keyword_index = text.find(keyword)
-                result_currency.append(currency_code)
-                result_currency_index.append(keyword_index)
-                break
-    
-    # 貨幣關鍵字重新排序：根據字串出現順序
-    if len(result_currency) != 0:
-        result_currency, result_currency_index = (zip(*sorted(zip(result_currency, result_currency_index), key=lambda x: x[1])))
-        result_currency = list(result_currency)
-        result_currency_index = list(result_currency_index)
-
-    
-    # 判斷是否有符合執行條件
-    if len(result_currency) != 0 and float(result_num) > 0:
-
-        # 判斷第一個貨幣關鍵字，是不是在字串最前面（確保與數字在一起，才會執行程式）
-        if result_currency_index[0] == 0:
-            
-            # 判斷貨幣類型長度是否為 1：預設將貨幣轉換為台幣
-            if len(result_currency) == 1:
-                result_currency.append("TWD")
-
-            # 判斷貨幣類型長度大於 2：只取前兩個元素
-            if len(result_currency) > 2:
-                result_currency = result_currency[:2]
-
-            # 回傳資料
-            result_data =  {
-                "num" : result_num,
-                "result" : result_currency,
-                "state" : "success"
-            }
-
-        else:
-            # 回傳資料
-            result_data =  {
-                "num" : "0",
-                "result" : [],
-                "state" : "fail"
-            }
-
-    else:
-        # 回傳資料
-        result_data =  {
-            "num" : "0",
-            "result" : [],
-            "state" : "fail"
-        }
-
-    return result_data
 
 # 貨幣換算 API
 def currency_conversion(currency):
@@ -1140,8 +1062,6 @@ def pageTemplate_currency( data, model ):
         }
 
         return currency_info, currency_num, currency_diff
-
-
 
 
 # 包裝訊息，發送訊息

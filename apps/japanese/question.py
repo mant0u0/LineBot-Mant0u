@@ -8,7 +8,7 @@ import re
 import requests
 
 from apps.common.common import *
-from apps.ai.gemini import geminiPrompt
+from apps.ai.gemini import gemini_ai
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -18,53 +18,56 @@ def japaneseQuestion(event, userMessage):
     userMessage = userMessage.replace('日文單字：', '')
 
     try:
-        prompt = [
+        record_prompt = [
             {   
-                "Q":".世界", 
-                "A":"世界|*せかい(sekai)|しんぶん(shinbun)|ほんやく(honyaku)|かんじ(kanji)"
+                "user":".世界", 
+                "model":"世界|*せかい(sekai)|しんぶん(shinbun)|ほんやく(honyaku)|かんじ(kanji)"
             },
             {   
-                "Q":".環境", 
-                "A":"環境|*かんきょう(kankyou)|かいぎ(kaigi)|てがみ(tegami)|こうじょう(koujou)"
+                "user":".環境", 
+                "model":"環境|*かんきょう(kankyou)|かいぎ(kaigi)|てがみ(tegami)|こうじょう(koujou)"
             },
             {   
-                "Q":".發展", 
-                "A":"発展|*はってん(hatten)|ほうほう(houhou)|はっけん(hakken)|ほうちょう(houchou)"
+                "user":".發展", 
+                "model":"発展|*はってん(hatten)|ほうほう(houhou)|はっけん(hakken)|ほうちょう(houchou)"
             },
             {   
-                "Q":".民主", 
-                "A":"民主|*みんしゅ(minshu)|きょうわ(kyouwa)|しゅじん(shujin)|ぶんか(bunka)"
+                "user":".民主", 
+                "model":"民主|*みんしゅ(minshu)|きょうわ(kyouwa)|しゅじん(shujin)|ぶんか(bunka)"
             },
             {   
-                "Q":".饅頭", 
-                "A":"饅頭|*まんじゅう(manjuu)|たべもの(tabemono)|やさい(yasai)|くだもの(kudamono)"
+                "user":".饅頭", 
+                "model":"饅頭|*まんじゅう(manjuu)|たべもの(tabemono)|やさい(yasai)|くだもの(kudamono)"
             },
             {   
-                "Q":".下班", 
-                "A":"退勤|*たいきん(taikin)|しゅうぎょう(shuugyou)|しごとしゅうりょう(shigoto shuuryou)|はってん(hatten)"
+                "user":".下班", 
+                "model":"退勤|*たいきん(taikin)|しゅうぎょう(shuugyou)|しごとしゅうりょう(shigoto shuuryou)|はってん(hatten)"
             },
             {   
-                "Q":".早餐", 
-                "A":"朝食|*ちょうしょく(choushoku)|あさごはん(asagohan)|ひるごはん(hirugohan)|ゆうはん(yuuhan)"
+                "user":".早餐", 
+                "model":"朝食|*ちょうしょく(choushoku)|あさごはん(asagohan)|ひるごはん(hirugohan)|ゆうはん(yuuhan)"
             },
             {   
-                "Q":".蘿蔔", 
-                "A":"大根|*だいこん(daikon)|にんじん(ninjin)|ごぼう(gobou)|かぶ(kabu)"
+                "user":".蘿蔔", 
+                "model":"大根|*だいこん(daikon)|にんじん(ninjin)|ごぼう(gobou)|かぶ(kabu)"
             },
             {   
-                "Q":".蔚藍檔案", 
-                "A":"ブルーアーカイブ|*ブルーアーカイブ(buruu aakaibu)|レッドドキュメント(reddo dokyumento)|イエローファイル(iero fairu)|グリーンレジストリ(guriin rejisutori)"
+                "user":".蔚藍檔案", 
+                "model":"ブルーアーカイブ|*ブルーアーカイブ(buruu aakaibu)|レッドドキュメント(reddo dokyumento)|イエローファイル(iero fairu)|グリーンレジストリ(guriin rejisutori)"
             },
             {   
-                "Q":".電腦", 
-                "A":"コンピューター|*コンピューター(konpyuutaa)|テレビ(terebi)|スマートフォン(sumaatofon)|タブレット(taburetto)"
+                "user":".電腦", 
+                "model":"コンピューター|*コンピューター(konpyuutaa)|テレビ(terebi)|スマートフォン(sumaatofon)|タブレット(taburetto)"
             },
             {   
-                "Q":".鬧鐘", 
-                "A":"目覚まし時計|*めざましどけい(mezamashi dokei)|とけい(tokei)|ばんどけい(bandokei)|すいどけい(suidokei)"
+                "user":".鬧鐘", 
+                "model":"目覚まし時計|*めざましどけい(mezamashi dokei)|とけい(tokei)|ばんどけい(bandokei)|すいどけい(suidokei)"
             }
         ]
-        return_text = geminiPrompt("."+userMessage, prompt)
+
+        user_prompt = "."+userMessage
+        system_prompt =  "請依照先前格式產生"
+        return_text = gemini_ai(user_prompt, system_prompt, record_prompt)
         # print(return_text)
 
         # 文字分割：題目、答案選項、錯誤選項、錯誤選項、錯誤選項
