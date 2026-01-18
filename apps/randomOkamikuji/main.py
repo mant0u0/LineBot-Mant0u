@@ -5,7 +5,8 @@ from linebot.models import *
 import os
 import random
 
-from apps.ai.gemini import gemini_ai
+# from apps.ai.gemini import gemini_ai
+from apps.ai.groq import groqAI_advanced
 from apps.common.common import *
 from apps.randomOkamikuji.template import *
 
@@ -193,7 +194,7 @@ def get_okamikuji_fortune(result, userMessage):
         },
 
     ]
-    result_fortune = gemini_ai(user_prompt, system_prompt, record_prompt)
+    result_fortune = groqAI_advanced(user_prompt, system_prompt, record_prompt)
 
     return result_fortune
 
