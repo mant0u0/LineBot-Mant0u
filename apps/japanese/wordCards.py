@@ -9,7 +9,8 @@ import requests
 from urllib.parse import quote
 
 from apps.common.common import *
-from apps.ai.gemini import  gemini_ai
+# from apps.ai.gemini import  gemini_ai
+from apps.ai.groq import groqAI_advanced
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -340,7 +341,7 @@ def get_jpwords_example_sentences(text):
         user_prompt = text
 
 
-        return_text = gemini_ai(user_prompt, system_prompt ,record_prompt)
+        return_text = groqAI_advanced(user_prompt, system_prompt ,record_prompt)
 
     except:
         return_text = " - "

@@ -1,6 +1,5 @@
-from apps.ai.openai import openai
-from apps.ai.gemini import gemini, geminiVision,  gemini_ai
-from apps.ai.groq import groqAI
+from apps.ai.gemini import geminiVision
+from apps.ai.groq import groqAI, groqAI_advanced
 
 from apps.common.zhconvert import zhconvert
 
@@ -18,7 +17,7 @@ def aiMain(event, userMessage):
     # return_text = openai(userMessage)
     # return_text = zhconvert(return_text)
 
-    return_text = gemini(userMessage)
+    return_text = groqAI(userMessage)
 
     # 包裝訊息、發送訊息
     text_message = TextSendMessage(text=return_text)
@@ -42,7 +41,7 @@ def aiMant0u(event, userMessage):
     userMessage = userMessage.replace('饅：', '')
 
     userMessage = userMessage + "（你是一顆名為「饅頭」的聊天機器人，請使用 50 字簡短回答，並使用日式顏文字作為結尾）"
-    return_text = gemini(userMessage)
+    return_text = groqAI(userMessage)
     return_text = zhconvert(return_text)
 
 
@@ -125,7 +124,7 @@ def aiMant0uText(userMessage):
     ]
     user_prompt = userMessage + "【回答限制 100 字以內】"
     system_prompt = "使用「正體中文(台灣)」回覆，回答限制 100 字以內"
-    return_original = gemini_ai(user_prompt, system_prompt, record_prompt)
+    return_original = groqAI_advanced(user_prompt, system_prompt, record_prompt)
     
     return_split = return_original.split("||")
     return_text = return_split[0]
@@ -216,7 +215,7 @@ def aiTest(event, userMessage):
             "model":"民主|*みんしゅ(minshu)|きょうわ(kyouwa)|しゅじん(shujin)|ぶんか(bunka)"
         }
     ]
-    return_text = gemini_ai(user_prompt, system_prompt, record_prompt)
+    return_text = groqAI_advanced(user_prompt, system_prompt, record_prompt)
 
     # 包裝訊息、發送訊息
     text_message = TextSendMessage(text=return_text)
@@ -259,7 +258,7 @@ def aiTranslateChinese(userMessage):
             "model":"你讓我感到憂鬱。"
         },
     ]
-    return_text = gemini_ai(user_prompt,  system_prompt ,record_prompt)
+    return_text = groqAI_advanced(user_prompt,  system_prompt ,record_prompt)
 
     return return_text
 

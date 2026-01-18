@@ -8,7 +8,8 @@ import json
 import random
 from apps.common.common import *
 from apps.randomTarotCards.template import *
-from apps.ai.gemini import gemini
+# from apps.ai.gemini import gemini
+from apps.ai.groq import groqAI
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -48,7 +49,7 @@ def random_tarot_cards_main(event, userMessage):
 
         input_ai_text = f"請根據塔羅牌{card_name}{card_direction}，依據「{card_illustrate}」牌意解釋關於「{userMessage}」的分析，限用20~50字元來解釋"
         result_text = f"{card_name} - {card_direction}"
-        result_text_fortune = gemini(input_ai_text)
+        result_text_fortune = groqAI(input_ai_text)
         result_img_url = localImg(f"randomTarotCards/{card_direction_en}/{card_name_img}.png")
 
         if result_text_fortune != "":

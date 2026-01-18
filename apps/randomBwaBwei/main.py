@@ -6,8 +6,9 @@ import os
 import random
 
 from apps.common.common import *
-from apps.ai.gemini import gemini
+# from apps.ai.gemini import gemini
 # from apps.ai.openai import openai
+from apps.ai.groq import groqAI
 from apps.common.database import *
 from apps.randomBwaBwei.template import *
 
@@ -186,7 +187,7 @@ def get_bwabwei_fortune(result_illustrate, userMessage):
 
     # gemini
     askText = f"請扮演神明說話，針對「{userMessage}」表示「{result_illustrate}」。（請在 20~50 字以內，使用白話與古文穿插回覆）"
-    result_fortune = gemini(askText)
+    result_fortune = groqAI(askText)
 
     return result_fortune
 

@@ -5,7 +5,9 @@ from linebot.models import *
 
 import os
 from apps.common.common import *
-from apps.ai.gemini import  gemini_ai
+# from apps.ai.gemini import  gemini_ai
+from apps.ai.groq import groqAI_advanced
+
 from apps.randomGashapon.main import *
 
 
@@ -72,7 +74,7 @@ def randomGashaponAi(event, userMessage):
         ]
         user_prompt = userMessage
         system_prompt = "產生相關字詞單字，請依照先前格式產生，最多產生8組文字"
-        return_text = gemini_ai(user_prompt, system_prompt, record_prompt)
+        return_text = groqAI_advanced(user_prompt, system_prompt, record_prompt)
         randomGashaponAddCheck(event, return_text)
 
     except:

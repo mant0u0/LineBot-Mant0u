@@ -8,7 +8,8 @@ import re
 import requests
 
 from apps.common.common import *
-from apps.ai.gemini import gemini_ai
+# from apps.ai.gemini import gemini_ai
+from apps.ai.groq import groqAI_advanced
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 
@@ -67,7 +68,7 @@ def japaneseQuestion(event, userMessage):
 
         user_prompt = "."+userMessage
         system_prompt =  "請依照先前格式產生"
-        return_text = gemini_ai(user_prompt, system_prompt, record_prompt)
+        return_text = groqAI_advanced(user_prompt, system_prompt, record_prompt)
         # print(return_text)
 
         # 文字分割：題目、答案選項、錯誤選項、錯誤選項、錯誤選項
