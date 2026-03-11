@@ -62,6 +62,8 @@ from apps.questionnaire.main import questionnaireMain
 from apps.japanese.question import japaneseQuestion, japaneseAnswer
 from apps.japanese.wordCards import japaneseWordCards, japaneseVoice
 
+from apps.SpongeBob.main import spongeBobMain, spongeBobSearch
+
 from apps.otherTools.calculator import calculator
 from apps.calendar.main import calendarMain
 # from apps.calendar.example import calendarExample
@@ -221,6 +223,11 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, text_message)
     elif userMessage.find('扭蛋機：') == 0 or userMessage.find('扭蛋：') == 0:
         randomGashaponAi(event, userMessage)
+
+    elif userMessage == '海綿！':
+        spongeBobMain(event)
+    elif userMessage.find('海綿：') == 0:
+        spongeBobSearch(event, userMessage)
 
     elif userMessage == '一番賞':
         gameIchibanSet(event)
