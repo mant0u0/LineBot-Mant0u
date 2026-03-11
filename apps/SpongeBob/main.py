@@ -14,8 +14,16 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 # CSV 檔案路徑
 def get_csv_path():
     """取得 SpongeBob.csv 檔案的絕對路徑"""
-    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-    return os.path.join(base_dir, 'static', 'csv', 'SpongeBob.csv')
+    # 獲取專案根目錄：從當前文件向上找到包含 index.py 的目錄
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(os.path.dirname(current_dir))
+    csv_path = os.path.join(base_dir, 'static', 'csv', 'SpongeBob.csv')
+    
+    # 在 Vercel/Lambda 環境中，如果上述路徑不存在，嘗試使用 /var/task 路徑
+    if not os.path.exists(csv_path):
+        csv_path = '/var/task/static/csv/SpongeBob.csv'
+    
+    return csv_path
 
 # 載入梗圖資料
 def load_memes():
